@@ -1,5 +1,5 @@
 (function() {
-    function Insertable($firebaseArray) {
+    function Insertable($firebaseArray, SmackTalk) {
         
         /*
         * @desc = instance of Insertable to be returned
@@ -14,5 +14,5 @@
     
     angular
         .module('awkwardAssist')
-        .controller('Insertable', ['$firebaseArray', Insertable]);
+        .controller('Insertable', ['$firebaseArray', 'SmackTalk', Insertable]);
 })();
