@@ -1,0 +1,49 @@
+.chatroom-sidebar {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 270px;
+    height: 100%;
+    padding-top: 1.8rem;
+    padding-left: 25px;
+    padding-right: 10px;
+    background-color: lightgrey;
+    font-family: sans-serif;
+}
+
+.chatroom-sidebar-header {
+    display: inline-block;
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+}
+
+.new-chatroom-button {
+    display: inline-block;
+    position: relative;
+    left: 0.5rem;
+    bottom: 0.5rem;
+    width: 4.5rem;
+    background-color: white;
+    color: slategray;
+    opacity: 0.8;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+
+.chatroom-list {
+    position: relative;
+    top: 20px;
+    list-style: none;
+}
+
+.chatroom-list-item {
+    margin-top: 10px;
+    color: slategray;
+    cursor: pointer;
+    overflow-x: hidden;
+}

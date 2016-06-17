@@ -1,0 +1,82 @@
+.chatroom {
+    position: relative;
+    height: calc(100% - 3rem);
+    overflow: auto;
+    padding-top: 4rem;
+}
+
+.chatroom-header {
+    display: inline-block;
+    position: fixed;
+    top: 0px;
+    right: 20px;
+    left: 270px;
+    background-color: white;
+    width: calc(100% - 286px);
+    
+    padding: 1.5rem 1rem 1.5rem 2rem;
+    z-index: 10;
+}
+
+.chatroom-header h1 {
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+#header-room {
+    float: left;
+}
+
+#header-username {
+    float: right;
+}
+
+#header-change-username {
+    font-size: 0.8rem;
+    color: dimgrey;
+    clear: right;
+    float: right;
+    cursor: pointer;
+}
+
+div.chatroom-messages-container {
+    position: relative;
+    top: 1.7rem;
+}
+
+div.chatroom-message {
+    display: block;
+    padding: 0.7rem 0rem;
+}
+
+.chatroom-message.even {
+    background-color: #F6F7FB;
+}
+
+.chatroom-message.odd {
+    background-color: white;
+}
+
+span.chatroom-message {
+    display: block;
+    padding: 0px 1rem;
+}
+
+
+.chatroom-message.username {
+    font-weight: 600;
+    text-align: left;
+}
+
+.sent-at {
+    font-style: italic;
+    font-weight: 400;
+    color: lightgrey;
+    text-align: right;
+    float: right;
+}
+
+.chatroom-message.content {
+    padding-right: 2rem;
+    word-wrap: break-word;
+}

@@ -1,0 +1,66 @@
+.new-room-modal-background {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: grey;
+    opacity: 0.3;
+}
+
+.new-room-modal-container {
+    position: relative;
+    top: calc(40% - 100px);
+    left: calc(50% - 170px);
+    height: 200px;
+    width: 340px;
+    text-align: left;
+    padding-left: 2.8rem;
+    padding-right: 2.8rem;
+    background-color: darkgrey;
+    border-radius: 3px;
+}
+
+.new-room-modal-container * {
+/*    border: 1px solid green;*/
+    margin: 0;
+}
+
+.new-room-modal-content {
+    min-height: 100%;
+    min-width: 100%;
+    font-family: "Arial";
+}
+
+.new-room-modal-header h3 {
+    font-weight: bold;
+    font-size: 1.7rem;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+.new-room-modal-body input {
+    margin-top: 5px;
+    width: 100%;
+    display: inline-block;
+}
+
+.new-room-modal-buttons .button {
+    width: 48.5%;
+    height: 35px;
+    border: none;
+    box-shadow: none;
+    margin-top: 6px;
+}
+
+#new-room-modal-ok-button {
+    background-color: lightgrey;
+}
+
+#new-room-modal-cancel-button {
+    float: right;
+    background-color: #898888;
+    color: white;
+}

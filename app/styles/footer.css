@@ -1,0 +1,33 @@
+footer {
+    position: fixed;
+    bottom: 0px;
+    left: 270px;
+    right: 0px;
+    height: 3rem;
+    margin: 0px;
+    padding: 0px;
+    background-color: orange;
+}
+
+form {
+    height: 100%;
+}
+
+footer * {
+    height: 100%;
+    margin: 0px;
+    
+}
+
+#footer-text-input {width: 85%;
+    width: 100%;
+    padding-right: 5.5rem;
+}
+
+#footer-submit {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 5.5rem;
+    margin: auto;
+}
