@@ -11,10 +11,10 @@
         * @desc current username
         * @type {String}
         */
-        $rootScope.username = $cookies.get("blocChatCurrentUser");
+        $rootScope.username = $cookies.get("awkwardAssistCurrentUser");
     }
     
     angular
-        .module('blocChat')
+        .module('awkwardAssist')
         .controller('MainCtrl', ['$cookies', "$rootScope", MainCtrl]);
 })();

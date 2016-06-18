@@ -14,6 +14,6 @@
     }
     
     angular
-        .module('blocChat')
+        .module('awkwardAssist')
         .controller('NewRoomModalCtrl', ['$uibModalInstance', NewRoomModalCtrl]);
 })();

@@ -60,7 +60,7 @@
             });
             
             modalInstance.result.then(function(username) {
-                $cookies.put("blocChatCurrentUser", username);
+                $cookies.put("awkwardAssistCurrentUser", username);
                 $rootScope.username = username;
             }, function(reason) {
                 console.log("The reason for dismissing the modal was: " + reason);
@@ -86,6 +86,6 @@
     }
     
     angular
-        .module('blocChat')
+        .module('awkwardAssist')
         .controller('ChatroomCtrl', ['$rootScope', '$scope', '$firebaseArray', '$uibModal', '$cookies', 'Message', ChatroomCtrl]);
 })();

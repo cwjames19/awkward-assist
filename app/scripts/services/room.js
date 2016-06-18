@@ -42,6 +42,6 @@
     }
     
     angular
-        .module('blocChat')
+        .module('awkwardAssist')
         .factory('Room', ['$firebaseArray', Room]);
 })();

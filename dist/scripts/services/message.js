@@ -45,6 +45,6 @@
     }
     
     angular
-        .module('blocChat')
+        .module('awkwardAssist')
         .factory("Message", ["$rootScope", "$firebaseArray", Message]);
 })();

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="blocChat" ng-controller="MainCtrl as main">
+<html ng-app="awkwardAssist" ng-controller="MainCtrl as main">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Bloc Chat</title>
@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/styles/newRoomModal.css">
     <link rel="stylesheet" type="text/css" href="/styles/setCurrentUserModal.css">
     <link type="text/css" rel="stylesheet" href="styles/chatRoom.css">
+    <link rel="stylesheet" type="text/css" href="styles/insertableMenu.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
     <script>
@@ -36,9 +37,18 @@
     <script src="/scripts/controllers/ChatroomCtrl.js"></script>
     <script src="/scripts/controllers/NewRoomModalCtrl.js"></script>
     <script src="/scripts/controllers/SetCurrentUserModalCtrl.js"></script>
+    <script src="/scripts/controllers/InsertableCtrl.js"></script>
     <script src="/scripts/services/room.js"></script>
     <script src="/scripts/services/message.js"></script>
+    <script src="/scripts/services/insertable.js"></script>
+    <script src="/scripts/services/insertables/smackTalk.js"></script>
+    <script src="/scripts/services/insertables/breakUps.js"></script>
+    <script src="/scripts/services/insertables/compliments.js"></script>
+    <script src="/scripts/services/insertables/excusesToLeave.js"></script>
+    <script src="/scripts/services/insertables/jokes.js"></script>
+    <script src="/scripts/services/insertables/subjectChanges.js"></script>
     <script src="/scripts/filters/sentAt.js"></script>
+    
     <script src="/templates/setCurrentUserModal.html"></script>
 </head>
 <body>
@@ -65,12 +75,21 @@
                 </div>
             </div>
         
+            <section class="insertables-container" ng-controller="InsertableCtrl as Insertable">
+                    <button id="insertable-button">
+                        <span class="ion-help-buoy"></span>
+                    </button>
+                    <menu class="insertables-menu">
+
+                    </menu>
+            </section>
             <footer>
                 <form ng-submit="chatroom.addMessage(chatroom.newMessageContent)">
                     <input id="footer-text-input" type="text" placeholder="Enter message here..." ng-model="chatroom.newMessageContent">
                     <input id="footer-submit" type="submit" value="Enter">
                 </form>
             </footer>
+            
         </section>
     </main>
     
