@@ -6,29 +6,45 @@
 }
 
 .chatroom-header {
-    display: inline-block;
+    display: block;
+/*    position: static;*/
     position: fixed;
-    top: 0px;
-    right: 20px;
     left: 270px;
-    background-color: white;
-    width: calc(100% - 286px);
-    
-    padding: 1.5rem 1rem 1.5rem 2rem;
+    top: 0px;
+    background-color: white;   
+    width: calc(100% - 270px);
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    height: 6.5rem;
     z-index: 10;
 }
 
-.chatroom-header h1 {
+.chatroom-header h4 {
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
-#header-room {
+#header-room-container {
+    overflow: hidden;
+    text-overflow: clip;
+    display: inline-block;
+    max-width: 55%;
     float: left;
 }
 
-#header-username {
+#header-room-text {
+    text-overflow: ellipsis;
+}
+
+#header-username-container {
+    overflow: hidden;
+    text-overflow: clip;
+    display: inline-block;
+    max-width: 40%;
     float: right;
+}
+
+#header-username-text {
+    text-overflow: ellipsis;
 }
 
 #header-change-username {
@@ -39,9 +55,10 @@
     cursor: pointer;
 }
 
-div.chatroom-messages-container {
+section.chatroom-messages-container {
     position: relative;
-    top: 1.7rem;
+    clear: both;
+    top: 0rem;
 }
 
 div.chatroom-message {
