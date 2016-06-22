@@ -23,11 +23,11 @@ body {
 
 main {
     position: relative;
-    top: 6.5rem;
+    top: 5rem;
     bottom: 3rem;
     right: 0px;
     left: 0px;
-    height: calc(100% - 9.5rem);
+    height: calc(100% - 8rem);
     margin-left: 270px;
     background-color: white;
     overflow-y: scroll;

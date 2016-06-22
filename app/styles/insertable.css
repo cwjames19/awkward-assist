@@ -1,6 +1,8 @@
 .insertables-container {
-    position: fixed;
+    position: absolute;
     bottom: 0px;
+    left: 270px;
+    height: calc(3rem + 400px);
 }
 
 #insertable-button {
@@ -12,7 +14,7 @@
     color: white;
     font-size: 200%;
     border: none;
-    outline: none;   
+    outline: none;  
 }
 
 #insertable-button:active {
@@ -39,10 +41,13 @@
 }
 
 .insertables-menu {
-    position: relative;
+    position: absolute;
     height: 400px;
     width: 350px;
-    background-color: #00ADAD;
+    bottom: 3rem;
+    /* background-color: #00ADAD; */
     color: white;
-/*    opacity: 0;*/
+    /* opacity: 0; */
+    border: 1px solid black;
+    margin: 0px;
 }

@@ -7,15 +7,12 @@
 
 .chatroom-header {
     display: block;
-/*    position: static;*/
-    position: fixed;
+    position: absolute;
     left: 270px;
     top: 0px;
-    background-color: white;   
+    background-color: white;
     width: calc(100% - 270px);
-    padding: 1.5rem 1.5rem 1.5rem 2rem;
-    height: 6.5rem;
-    z-index: 10;
+    height: 5rem;
 }
 
 .chatroom-header h4 {
@@ -29,6 +26,8 @@
     display: inline-block;
     max-width: 55%;
     float: left;
+    height: 100%;
+    padding-left: 1.5rem;
 }
 
 #header-room-text {
@@ -41,6 +40,8 @@
     display: inline-block;
     max-width: 40%;
     float: right;
+    height: 100%;
+    padding-right: 1.5rem;
 }
 
 #header-username-text {
@@ -51,7 +52,6 @@
     font-size: 0.8rem;
     color: dimgrey;
     clear: right;
-    float: right;
     cursor: pointer;
 }
 

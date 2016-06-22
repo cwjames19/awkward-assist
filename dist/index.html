@@ -2,7 +2,7 @@
 <html ng-app="awkwardAssist" ng-controller="MainCtrl as main">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Bloc Chat</title>
+    <title>Awkward Assist</title>
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link type="text/css" rel="stylesheet" href="styles/normalize.css">
     <link type="text/css" rel="stylesheet" href="styles/main.css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/styles/newRoomModal.css">
     <link rel="stylesheet" type="text/css" href="/styles/setCurrentUserModal.css">
     <link type="text/css" rel="stylesheet" href="styles/chatRoom.css">
-    <link rel="stylesheet" type="text/css" href="styles/insertableMenu.css">
+    <link rel="stylesheet" type="text/css" href="styles/insertable.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
     <script>
@@ -54,7 +54,7 @@
 <body>
     
     <aside class="chatroom-sidebar" ng-controller="ChatSidebarCtrl as chatSidebar">
-        <header class="chatroom-sidebar-header">Bloc Chat</header>
+        <header class="chatroom-sidebar-header">Awkward Assist</header>
         <button class="new-chatroom-button" ng-click="chatSidebar.openNewRoomModal()">New room</button>
         <ul class="chatroom-list">
             <li class="chatroom-list-item" ng-repeat="room in chatSidebar.rooms" ng-click="chatSidebar.selectActiveRoom(room)">{{ room.name }}</li>
@@ -75,33 +75,29 @@
     </header>
     
     <main ng-controller="ChatroomCtrl as chatroom">        
-            
-            
-            <section class="chatroom-messages-container">
-                <div class="chatroom-message" ng-repeat="message in chatroom.activeRoomMessages" ng-class="{even: $even, odd: $odd}">
-                    <span class="chatroom-message username">{{ message.username }}<span class="sent-at">{{ message.sentAt | SentAt }}</span></span>
-                    <span class="chatroom-message content">{{ message.content }}</span>
-                </div>
-            </section>
-        
-<!--
-            <section class="insertables-container" ng-controller="InsertableCtrl as Insertable">
-                    <button id="insertable-button">
-                        <span class="ion-help-buoy"></span>
-                    </button>
-                    <menu class="insertables-menu">
-
-                    </menu>
-            </section>
-            <footer>
-                <form ng-submit="chatroom.addMessage(chatroom.newMessageContent)">
-                    <input id="footer-text-input" type="text" placeholder="Enter message here..." ng-model="chatroom.newMessageContent">
-                    <input id="footer-submit" type="submit" value="Enter">
-                </form>
-            </footer>
--->
-        
+        <section class="chatroom-messages-container">
+            <div class="chatroom-message" ng-repeat="message in chatroom.activeRoomMessages" ng-class="{even: $even, odd: $odd}">
+                <span class="chatroom-message username">{{ message.username }}<span class="sent-at">{{ message.sentAt | SentAt }}</span></span>
+                <span class="chatroom-message content">{{ message.content }}</span>
+            </div>
+        </section>
     </main>
+    
+    <section class="insertables-container" ng-controller="InsertableCtrl as Insertable">
+            <button id="insertable-button">
+                <span class="ion-help-buoy"></span>
+            </button>
+            <menu class="insertables-menu">
+
+            </menu>
+    </section>
+    
+    <footer ng-controller="ChatroomCtrl as chatroom">
+        <form ng-submit="chatroom.addMessage(chatroom.newMessageContent)">
+            <input id="footer-text-input" type="text" placeholder="Enter message here..." ng-model="chatroom.newMessageContent">
+            <input id="footer-submit" type="submit" value="Enter">
+        </form>
+    </footer>
     
 </body>
 </html>
