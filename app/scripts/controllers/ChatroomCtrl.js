@@ -14,6 +14,15 @@
         var messageRef = firebase.database().ref().child('messages');
         
         /*
+        * @name scrollToBottom
+        * @desc automatically scrolls to bottom of chatroom div
+        * @ type {object} Function
+        */
+        var scrollToBottom = function() {
+            $("section.chatroom-messages-container").scrollTop($("div.chatroom-message:last").position().top);
+        };
+        
+        /*
         * @desc currently active chat room
         * @type {Object} Chat room object
         */
@@ -45,6 +54,8 @@
         ctrl.setActiveRoom = function(room) {
             ctrl.activeRoom = room;
             ctrl.activeRoomMessages = $firebaseArray(messageRef.orderByChild("roomId").equalTo(ctrl.activeRoom.$id));
+            setTimeout(scrollToBottom, 50);
+            document.getElementById("footer-text-input").focus();
         };
         
         /*
@@ -74,6 +85,13 @@
         */
         ctrl.addMessage = function(content) {
             Message.add(content, ctrl.activeRoom.$id);
+            chatroomContainer = $(".chatroom-messages-container");
+            setTimeout(function() {
+                containerHeight = document.querySelector(".chatroom-messages-container").scrollHeight;
+                if (containerHeight - (chatroomContainer.scrollTop() + chatroomContainer.outerHeight()) < 400) {
+                    scrollToBottom();
+                };
+            }, 20);
             ctrl.newMessageContent = "";
         }
         
