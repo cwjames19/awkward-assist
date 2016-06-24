@@ -20,20 +20,3 @@ body {
     padding: 0px;
     font-size: 100%;
 }
-
-main {
-    position: relative;
-    top: 5rem;
-    bottom: 3rem;
-    right: 0px;
-    left: 0px;
-    height: calc(100% - 8rem);
-    margin-left: 270px;
-    background-color: white;
-    overflow-y: scroll;
-}
-
-main * {
-    margin: 0px;
-    padding: 0px;
-}

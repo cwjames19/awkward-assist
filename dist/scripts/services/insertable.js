@@ -14,5 +14,5 @@
     
     angular
         .module('awkwardAssist')
-        .controller('Insertable', ['$firebaseArray', 'SmackTalk', Insertable]);
+        .service('Insertable', ['$firebaseArray', 'SmackTalk', Insertable]);
 })();
