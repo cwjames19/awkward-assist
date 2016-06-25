@@ -61,43 +61,42 @@
         </ul>
     </aside>
     
-    <header ng-controller="ChatroomCtrl as chatroom" class="chatroom-header">
-        <div id="header-room-container">
-            <h4 id="header-room-text" ng-show="chatroom.activeRoom">Room: {{ chatroom.activeRoom.name }}</h4>
-        </div>
-        <div id="header-username-container">
-            <h4 id="header-username-text">
-                User: {{ username }}
-                <br />
-                <a id="header-change-username" ng-click="chatroom.openSetCurrentUserModal()">Change Username</a>
-            </h4>
-        </div>
-    </header>
-    
-    <main ng-controller="ChatroomCtrl as chatroom">        
+    <section ng-controller="ChatroomCtrl as chatroom">
+        <header class="chatroom-header">
+            <div id="header-room-container">
+                <h4 id="header-room-text" ng-show="chatroom.activeRoom">Room: {{ chatroom.activeRoom.name }}</h4>
+            </div>
+            <div id="header-username-container">
+                <h4 id="header-username-text">
+                    User: {{ username }}
+                    <br />
+                    <a id="header-change-username" ng-click="chatroom.openSetCurrentUserModal()">Change Username</a>
+                </h4>
+            </div>
+        </header>
         <section class="chatroom-messages-container">
             <div class="chatroom-message" ng-repeat="message in chatroom.activeRoomMessages" ng-class="{even: $even, odd: $odd}">
                 <span class="chatroom-message username">{{ message.username }}<span class="sent-at">{{ message.sentAt | SentAt }}</span></span>
                 <span class="chatroom-message content">{{ message.content }}</span>
             </div>
         </section>
-    </main>
+        <footer>
+            <form ng-submit="chatroom.addMessage(chatroom.newMessageContent)">
+                <input id="footer-text-input" type="text" placeholder="Enter message here..." ng-model="chatroom.newMessageContent">
+                <input id="footer-submit" type="submit" value="Enter">
+            </form>
+        </footer>
+    </section>
     
-    <section class="insertables-container" ng-controller="InsertableCtrl as Insertable">
-            <button id="insertable-button">
+    <section class="insertable-container" ng-controller="InsertableCtrl as Insertable">
+            <button class="insertable-button">
                 <span class="ion-help-buoy"></span>
             </button>
-            <menu class="insertables-menu">
+            <menu class="insertable-menu">
 
             </menu>
     </section>
     
-    <footer ng-controller="ChatroomCtrl as chatroom">
-        <form ng-submit="chatroom.addMessage(chatroom.newMessageContent)">
-            <input id="footer-text-input" type="text" placeholder="Enter message here..." ng-model="chatroom.newMessageContent">
-            <input id="footer-submit" type="submit" value="Enter">
-        </form>
-    </footer>
-    
+    <script src="/scripts/insertableMenu.js"></script>
 </body>
 </html>

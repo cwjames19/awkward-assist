@@ -1,5 +1,5 @@
 (function() {
-    function InsertableCtrl($scope, $globalScope, $firebaseArray, Insertable){
+    function InsertableCtrl($scope, $rootScope, $firebaseArray, Insertable){
         var ctrl = this;
         
         this.smackTalkTest = function() {
@@ -9,5 +9,5 @@
     
     angular
         .module('awkwardAssist')
-        .controller('InsertableCtrl', ['$scope', '$globalScope', '$firebaseArray', 'Insertable', InsertableCtrl]);
+        .controller('InsertableCtrl', ['$scope', '$rootScope', '$firebaseArray', 'Insertable', InsertableCtrl]);
 })();

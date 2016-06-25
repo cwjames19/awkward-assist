@@ -55,10 +55,21 @@
     cursor: pointer;
 }
 
-section.chatroom-messages-container {
-    position: relative;
-    clear: both;
-    top: 0rem;
+.chatroom-messages-container {
+    position: absolute;
+    top: 5rem;
+    bottom: 3rem;
+    right: 0px;
+    left: 0px;
+    height: calc(100% - 8rem);
+    margin-left: 270px;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.chatroom-messages-container * {
+    margin: 0px;
+    padding: 0px;
 }
 
 div.chatroom-message {
