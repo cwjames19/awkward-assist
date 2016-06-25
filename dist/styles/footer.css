@@ -2,7 +2,7 @@ footer {
     position: fixed;
     bottom: 0px;
     left: calc(3.75rem + 270px);
-    right: 0px;
+    right: -1px;
     height: 3rem;
     margin: 0px;
     padding: 0px;
