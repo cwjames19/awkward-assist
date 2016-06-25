@@ -1,33 +1,36 @@
 footer {
     position: fixed;
     bottom: 0px;
-    left: 270px;
+    left: calc(3.75rem + 270px);
     right: 0px;
     height: 3rem;
     margin: 0px;
     padding: 0px;
-    background-color: orange;
 }
 
-form {
-    height: 100%;
-}
+
 
 footer * {
     height: 100%;
     margin: 0px;
-    
 }
 
-#footer-text-input {width: 85%;
-    width: 100%;
-    padding-right: 5.5rem;
+form {
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    height: 100%;
+}
+
+#footer-text-input {
+    position: inherit;
+    width: calc(100% - 5.5rem);
 }
 
 #footer-submit {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
     width: 5.5rem;
-    margin: auto;
+    margin-left: -5px;
 }
+

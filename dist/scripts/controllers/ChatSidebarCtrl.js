@@ -53,6 +53,6 @@
     }
     
     angular
-        .module('blocChat')
+        .module('awkwardAssist')
         .controller('ChatSidebarCtrl', ['$rootScope', '$uibModal', 'Room', ChatSidebarCtrl]);
 })();

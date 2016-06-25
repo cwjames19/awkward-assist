@@ -11,6 +11,6 @@
     }
     
     angular
-        .module('blocChat', ['firebase', 'ui.bootstrap', 'ui.router', 'ngCookies'])
+        .module('awkwardAssist', ['firebase', 'ui.bootstrap', 'ui.router', 'ngCookies'])
         .config(config);
 })();

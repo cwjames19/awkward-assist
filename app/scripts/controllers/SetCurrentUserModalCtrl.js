@@ -14,6 +14,6 @@
     }
     
     angular
-        .module('blocChat')
+        .module('awkwardAssist')
         .controller('SetCurrentUserModalCtrl', ['$uibModalInstance', '$rootScope', SetCurrentUserModalCtrl]);
 })();

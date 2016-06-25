@@ -1,0 +1,48 @@
+.insertables-container {
+    position: fixed;
+    bottom: 0px;
+}
+
+#insertable-button {
+    position: absolute;
+    bottom: 0rem;
+    height: 3rem;
+    width: 3.75rem;
+    background-color: #00ADAD;
+    color: white;
+    font-size: 200%;
+    border: none;
+    outline: none;   
+}
+
+#insertable-button:active {
+    cursor: pointer;
+    background-color: white;
+    color: #00ADAD;
+    border: 1px solid #00ADAD;
+    outline: none;
+}
+
+#insertable-button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #00ADAD;
+    border: 1px solid #00ADAD;
+    outline: none;
+}
+
+#insertable-button:focus {
+    background-color: white;
+    color: #00ADAD;
+    border: 1px solid #00ADAD;
+    outline: none;
+}
+
+.insertables-menu {
+    position: relative;
+    height: 400px;
+    width: 350px;
+    background-color: #00ADAD;
+    color: white;
+/*    opacity: 0;*/
+}

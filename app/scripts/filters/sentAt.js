@@ -43,6 +43,6 @@
     }
     
     angular
-        .module('blocChat')
+        .module('awkwardAssist')
         .filter('SentAt', [SentAt]);
 })();

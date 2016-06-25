@@ -1,6 +1,10 @@
 (function() {
-    function InsertableCtrl(){
+    function InsertableCtrl($scope, $globalScope, $firebaseArray, Insertable){
+        var ctrl = this;
         
+        this.smackTalkTest = function() {
+            SmackTalk.retrieveTest();
+        }
     }
     
     angular

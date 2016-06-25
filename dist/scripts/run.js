@@ -1,5 +1,5 @@
 (function() {
-    function BlocChatCookies($rootScope, $cookies, $uibModal, $window, $uibModalInstance) {
+    function awkwardAssistCookies($rootScope, $cookies, $uibModal, $window, $uibModalInstance) {
         var modalController = function($uibModalInstance, $rootScope) {
             /*
             * @desc alias for controller's this object
@@ -29,8 +29,8 @@
                 if (username === "") {
                     tryAgain();
                 } else {
-                    $cookies.put("blocChatCurrentUser", username);
-                    console.log("Current Cookie: " + $cookies.get("blocChatCurrentUser"));
+                    $cookies.put("awkwardAssistCurrentUser", username);
+                    console.log("Current Cookie: " + $cookies.get("awkwardAssistCurrentUser"));
                     $rootScope.username = username;
                 }
             }, function(reason) {
@@ -44,12 +44,12 @@
             }
         }
         
-        if (!$cookies.get("blocChatCurrentUser") || $cookies.get("blocChatCurrentUser") === '') {
+        if (!$cookies.get("awkwardAssistCurrentUser") || $cookies.get("awkwardAssistCurrentUser") === '') {
             openModal();
         }
     }
     
     angular
-        .module('blocChat')
-        .run(['$rootScope', '$cookies', '$uibModal', '$window', BlocChatCookies]);
+        .module('awkwardAssist')
+        .run(['$rootScope', '$cookies', '$uibModal', '$window', awkwardAssistCookies]);
 })();
