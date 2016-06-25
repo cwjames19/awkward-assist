@@ -19,7 +19,10 @@
         * @ type {object} Function
         */
         var scrollToBottom = function() {
-            $("section.chatroom-messages-container").scrollTop($("div.chatroom-message:last").position().top);
+            var lastMessage = $("div.chatroom-message:last");
+            if (lastMessage.position() !== undefined) {
+                $("section.chatroom-messages-container").scrollTop(lastMessage.position().top);
+            }
         };
         
         /*
