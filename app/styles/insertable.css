@@ -1,15 +1,17 @@
 .insertable-container {
     position: absolute;
-    bottom: 0px;
-    left: 270px;
-    height: calc(3rem + 400px);
-}
-
-.insertable-button {
-    position: absolute;
     bottom: 0rem;
     height: 3rem;
     width: 3.75rem;
+}
+
+.insertable-button {
+    position: relative;
+    bottom: 0px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    width: 100%;
     background-color: #00ADAD;
     color: white;
     font-size: 200%;
@@ -42,11 +44,20 @@
 
 .insertable-menu {
     position: absolute;
-    display: hidden;
+    display: none;
     height: 0px;
     width: 0px;
     bottom: 3rem;
     background-color: #00ADAD; 
     color: white;
     margin: 0px;
+}
+
+.smack-talk {
+    display: inline-block;
+    margin: 0px;
+    height: 0px;
+    padding: 5px;
+    background-color: white;
+    color: #00ADAD;
 }

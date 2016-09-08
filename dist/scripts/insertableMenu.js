@@ -15,6 +15,17 @@ menu = $(".insertable-menu");
 insertableAll = $(".insertable-container");
 
 /*
+* @desc = event listener, reveals and exapnds menu of insertables when insertable button is entered
+* @type = {Function}, event listener
+*/
+button.mouseenter(function() {
+    menu.show().animate({
+        height: "400px",
+        width: "350px",
+    }, 300, showButtons() );
+});
+
+/*
 * @desc = event listener, collapses insertable menu and hides it when mouse leaves all insertable elements
 * @type = {Function}, event listener
 */
@@ -27,13 +38,9 @@ insertableAll.mouseleave(function() {
     });
 });
 
-/*
-* @desc = event listener, reveals and exapnds menu of insertables when insertable button is entered
-* @type = {Function}, event listener
-*/
-button.mouseenter(function() {
-    menu.show().animate({
-        height: "400px",
-        width: "350px",
-    }, 300);
-});
+showButtons = function() {
+    menu.children().animate({
+        height: "2rem",
+        opacity: "1"
+    });
+};

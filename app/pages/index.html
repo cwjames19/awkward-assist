@@ -8,7 +8,7 @@
     <link type="text/css" rel="stylesheet" href="styles/main.css">
     <link type="text/css" rel="stylesheet" href="styles/modal.css">
     <link rel='stylesheet' type='text/css' href='/styles/chatSidebar.css'>
-    <link type="text/css" rel="stylesheet" href="/styles/footer.css">
+    <link type="text/css" rel="stylesheet" href="/styles/textField.css">
     <link rel="stylesheet" type="text/css" href="/styles/newRoomModal.css">
     <link rel="stylesheet" type="text/css" href="/styles/setCurrentUserModal.css">
     <link type="text/css" rel="stylesheet" href="styles/chatroom.css">
@@ -41,6 +41,7 @@
     <script src="/scripts/services/room.js"></script>
     <script src="/scripts/services/message.js"></script>
     <script src="/scripts/services/insertable.js"></script>
+    <script src="/scripts/services/input.js"></script>
     <script src="/scripts/services/insertables/smackTalk.js"></script>
     <script src="/scripts/services/insertables/breakUps.js"></script>
     <script src="/scripts/services/insertables/compliments.js"></script>
@@ -85,16 +86,15 @@
                 <input id="footer-text-input" type="text" placeholder="Enter message here..." ng-model="chatroom.newMessageContent">
                 <input id="footer-submit" type="submit" value="Enter">
             </form>
+            <div class="insertable-container" ng-controller="InsertableCtrl as insertable">
+                <button class="insertable-button">
+                    <span class="ion-help-buoy"></span>
+                </button>
+                <menu class="insertable-menu">
+                    <button class="smack-talk" ng-click="insertable.getSmackTalk()">Talk some smack!</button>
+                </menu>
+            </div>
         </footer>
-    </section>
-    
-    <section class="insertable-container" ng-controller="InsertableCtrl as Insertable">
-            <button class="insertable-button">
-                <span class="ion-help-buoy"></span>
-            </button>
-            <menu class="insertable-menu">
-
-            </menu>
     </section>
     
     <script src="/scripts/chatroom.js"></script>
