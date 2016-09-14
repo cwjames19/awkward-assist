@@ -6,34 +6,21 @@
             $scope.$parent.chatroom.newMessageContent += str;
         };
         
-        ctrl.smackTalkTest = function() {
-            console.log("In the smack talk test in insertable ctrl");
-            SmackTalk.retrieveTest();
-            console.log(SmackTalk.retrieveTest());
-        }
-        
-        ctrl.insertSimple = function(type) {
-            console.log("In the insertSimple method in InsertableCtrl");
-            console.log("Argument passed: " + type);
-            console.log(Insertable.retrieveSimple(type));
-        }
-        
-//        ctrl.getSmackTalk = function() {
-//            console.log("In the controller");
-//            console.log($scope.insertable);
-//            console.log($scope.$parent);
-//            console.log($scope.$parent.chatroom);
-//            console.log($scope.$parent.chatroom.newMessageContent);
-//            console.log("What InsertableCtrl thinks Input is: " + Input);
-//            $scope.$parent.chatroom.newMessageContent += "Hello?";
-//            console.log("What InsertableCtrl thinks Input is: " + Input);
+//        ctrl.insertSimple = function(type) {
+//            console.log("In the insertSimple method in InsertableCtrl");
+//            console.log("Argument passed: " + type);
+//            console.log(Insertable.retrieveSimple(type));
 //        }
         
-        ctrl.getSmackTalk = function() {
-            console.log("In the controller");
-            text = SmackTalk.retrieveTest();
-            console.log(text);
+        ctrl.smackTalkTest = function() {
+            console.log("In InsertableCtrl");
+            text = SmackTalk.getSmackTalkTest($scope.$parent.chatroom.activeRoom.$id);
+            console.log("Back in Insertable Ctrl. Here's the smackTalk: " + text);
             insertText(text);
+        }
+        
+        ctrl.smackTalk = function() {
+            SmackTalk.getSmackTalk($scope.$parent.chatroom.activeRoom.$id);
         }
     }
     

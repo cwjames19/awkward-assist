@@ -47,6 +47,7 @@
         */
         ctrl.selectActiveRoom = function(room) {
             var newRoom = room;
+            console.log(newRoom);
             $rootScope.$broadcast('changeActiveRoom', newRoom);
         };
         
