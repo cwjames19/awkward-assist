@@ -19,9 +19,10 @@ insertableAll = $(".insertable-container");
 * @type = {Function}, event listener
 */
 button.mouseenter(function() {
+    button.css({"background-color": "white", "color": "#00ADAD"});
     menu.show().animate({
         height: "400px",
-        width: "350px",
+        width: "350px"
     }, 300, showButtons() );
 });
 
@@ -30,9 +31,11 @@ button.mouseenter(function() {
 * @type = {Function}, event listener
 */
 insertableAll.mouseleave(function() {
+    button.css({"background-color": "#00ADAD", "color": "white"});
     menu.animate({
         height: "0px",
-        width: "0px"
+        width: "0px",
+        border: "none"
     }, "fast", function() {
         menu.hide();
     });

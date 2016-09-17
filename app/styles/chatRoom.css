@@ -52,10 +52,10 @@
 .chatroom-messages-container {
     position: absolute;
     top: 5rem;
-    bottom: 3rem;
+    bottom: 6rem;
     right: 0px;
     left: 0px;
-    height: calc(100% - 8rem);
+    height: calc(100% - 11rem);
     margin-left: 270px;
     background-color: white;
     overflow-y: scroll;

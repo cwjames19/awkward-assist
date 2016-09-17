@@ -8,7 +8,7 @@
     <link type="text/css" rel="stylesheet" href="styles/main.css">
     <link type="text/css" rel="stylesheet" href="styles/modal.css">
     <link rel='stylesheet' type='text/css' href='/styles/chatSidebar.css'>
-    <link type="text/css" rel="stylesheet" href="/styles/textField.css">
+    <link type="text/css" rel="stylesheet" href="/styles/textArea.css">
     <link rel="stylesheet" type="text/css" href="/styles/newRoomModal.css">
     <link rel="stylesheet" type="text/css" href="/styles/setCurrentUserModal.css">
     <link type="text/css" rel="stylesheet" href="styles/chatroom.css">
@@ -82,8 +82,9 @@
             </div>
         </section>
         <footer>
-            <form ng-submit="chatroom.addMessage(chatroom.newMessageContent)">
-                <input id="footer-text-input" type="text" placeholder="Enter message here..." ng-model="chatroom.newMessageContent">
+            <form id="footer-new-message" ng-submit="chatroom.addMessage(chatroom.newMessageContent)">
+<!--                <input id="footer-text-input" type="text" placeholder="Enter message here..." ng-model="chatroom.newMessageContent">-->
+                <textarea id="footer-text-input" placeholder="Enter message here..." ng-model="chatroom.newMessageContent" form="footer-new-message"></textarea>
                 <input id="footer-submit" type="submit" value="Enter">
             </form>
             <div class="insertable-container" ng-controller="InsertableCtrl as insertable">

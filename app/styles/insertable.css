@@ -1,8 +1,9 @@
 .insertable-container {
     position: absolute;
     bottom: 0rem;
+    right: 0px;
     height: 3rem;
-    width: 3.75rem;
+    width: 5.5rem;
 }
 
 .insertable-button {
@@ -35,20 +36,15 @@
     outline: none;
 }
 
-.insertable-button:focus {
-    background-color: white;
-    color: #00ADAD;
-    border: 1px solid #00ADAD;
-    outline: none;
-}
-
 .insertable-menu {
     position: absolute;
     display: none;
+    right: 0px;
     height: 0px;
     width: 0px;
     bottom: 3rem;
     background-color: #00ADAD; 
+    border: 2px solid #efeaea;
     color: white;
     margin: 0px;
 }
