@@ -76,9 +76,12 @@
             </div>
         </header>
         <section class="chatroom-messages-container">
-            <div class="chatroom-message" ng-repeat="message in chatroom.activeRoomMessages" ng-class="{even: $even, odd: $odd}">
-                <span class="chatroom-message username">{{ message.username }}<span class="sent-at">{{ message.sentAt | SentAt }}</span></span>
-                <span class="chatroom-message content">{{ message.content }}</span>
+            <div class="chatroom-message" ng-repeat="message in chatroom.activeRoomMessages" ng-class="{even: $even, odd: $odd, own: message.username === chatroom.activeUsername}">
+                <span class="message-top-line" ng-class="{own: message.username === chatroom.activeUsername}">
+                    <span class="username">{{ message.username }}</span>
+                    <span class="sent-at" ng-class="{own: message.username === chatroom.activeUsername}">{{ message.sentAt | SentAt }}</span>
+                </span>
+                <span class="message-content" ng-class="{own: message.username === chatroom.activeUsername}">{{ message.content }}</span>
             </div>
         </section>
         <footer>
