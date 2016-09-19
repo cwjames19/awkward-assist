@@ -1,13 +1,13 @@
 (function() {
-    function InsertableCtrl($scope, $rootScope, $firebaseArray, Input, Insertable, SmackTalk){
+    function InsertableCtrl($scope, $rootScope, $firebaseArray, Insertable){
         var ctrl = this;
                 
-        var insertText = function(str) {
-            $scope.$parent.chatroom.newMessageContent += str;
+        var insertText = function(string) {
+            $scope.$parent.chatroom.newMessageContent += string;
         };
                 
         ctrl.smackTalk = function() {
-            var insertableString = SmackTalk.getSmackTalk($scope.$parent.chatroom.activeRoom.$id);
+            var insertableString = Insertable.getInsertable('smackTalk', $scope.$parent.chatroom.activeRoom.$id);
             insertableString
                 .then(function(string) {
                     insertText(string);
@@ -19,5 +19,5 @@
     
     angular
         .module('awkwardAssist')
-        .controller('InsertableCtrl', ['$scope', '$rootScope', '$firebaseArray', 'Input', 'Insertable', 'SmackTalk', InsertableCtrl]);
+        .controller('InsertableCtrl', ['$scope', '$rootScope', '$firebaseArray', 'Insertable', InsertableCtrl]);
 })();

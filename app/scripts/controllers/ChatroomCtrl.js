@@ -1,6 +1,6 @@
 (function() {
     
-    function ChatroomCtrl($rootScope, $scope, $firebaseArray, $uibModal, $cookies, Message, Input, Insertable, SmackTalk) {
+    function ChatroomCtrl($rootScope, $scope, $firebaseArray, $uibModal, $cookies, Message, Insertable, SmackTalk) {
                 /*
         * @desc alias for the controller's this object
         * @type {Object} 'this' object
@@ -112,5 +112,5 @@
     
     angular
         .module('awkwardAssist')
-        .controller('ChatroomCtrl', ['$rootScope', '$scope', '$firebaseArray', '$uibModal', '$cookies', 'Message', 'Input', 'Insertable', 'SmackTalk', ChatroomCtrl]);
+        .controller('ChatroomCtrl', ['$rootScope', '$scope', '$firebaseArray', '$uibModal', '$cookies', 'Message', 'Insertable', ChatroomCtrl]);
 })();
