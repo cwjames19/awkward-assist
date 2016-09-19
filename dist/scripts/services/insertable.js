@@ -18,10 +18,12 @@
          * @return Array? FirebaseArray?
         */
         var getExclusions = function(array) {
+            console.log("array: " + array)
             var exclusions = [];
             for(var i = 0; array[i]; i += 1) {
                 exclusions.push(array[i].index);
             }
+            console.log("exclusions: " + exclusions);
             return exclusions;
         }
         
@@ -38,7 +40,7 @@
         };
         
         var selectString = function(exclusions) {
-                available_strings = currentInsertable.library.filter(
+            available_strings = currentInsertable.library.filter(
                 function(value, index) {
                     return exclusions.includes(index) === false;
                 }
@@ -54,6 +56,7 @@
             return exclusionsPromise.$loaded()
                 .then( function(array) {            
                     var string = selectString(getExclusions(array));
+                    console.log("index: " + currentInsertable.library.indexOf(string));
                     pushIndex(roomId, currentInsertable.library.indexOf(string));
                     return string;
                 }, function(error) {
