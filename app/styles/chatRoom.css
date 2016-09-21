@@ -52,10 +52,10 @@
 .chatroom-messages-container {
     position: absolute;
     top: 5rem;
-    bottom: 3rem;
+    bottom: 6rem;
     right: 0px;
     left: 0px;
-    height: calc(100% - 8rem);
+    height: calc(100% - 11rem);
     margin-left: 270px;
     background-color: white;
     overflow-y: scroll;
@@ -68,24 +68,14 @@
 
 div.chatroom-message {
     display: block;
-    padding: 0.7rem 0rem;
+    padding: 0.7rem 1rem;
 }
 
-.chatroom-message.even {
-    background-color: #F6F7FB;
+.message-top-line {
+    display: inherit;
 }
 
-.chatroom-message.odd {
-    background-color: white;
-}
-
-span.chatroom-message {
-    display: block;
-    padding: 0px 1rem;
-}
-
-
-.chatroom-message.username {
+.username {
     font-weight: 600;
     text-align: left;
 }
@@ -98,7 +88,33 @@ span.chatroom-message {
     float: right;
 }
 
-.chatroom-message.content {
+.message-content {
     padding-right: 2rem;
     word-wrap: break-word;
+    
+}
+
+.even {
+    background-color: #F6F7FB;
+}
+
+.odd {
+    background-color: white;
+}
+
+.own.message-top-line {
+    text-align: right;
+}
+
+.own.username {
+    
+}
+
+.own.sent-at {
+    float: left
+}
+
+.own.message-content {
+    display: inherit;
+    text-align: right;
 }

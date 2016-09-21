@@ -49,6 +49,8 @@
         */
         ctrl.newMessageContent = "";
         
+        ctrl.activeUsername = $rootScope.username;
+        
         
         
         /*
