@@ -91,7 +91,6 @@ div.chatroom-message {
 .message-content {
     padding-right: 2rem;
     word-wrap: break-word;
-    
 }
 
 .even {
@@ -104,10 +103,6 @@ div.chatroom-message {
 
 .own.message-top-line {
     text-align: right;
-}
-
-.own.username {
-    
 }
 
 .own.sent-at {

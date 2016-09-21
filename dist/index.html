@@ -38,18 +38,11 @@
     <script src="/scripts/controllers/NewRoomModalCtrl.js"></script>
     <script src="/scripts/controllers/SetCurrentUserModalCtrl.js"></script>
     <script src="/scripts/controllers/InsertableCtrl.js"></script>
-    <script src="/scripts/services/room.js"></script>
-    <script src="/scripts/services/message.js"></script>
-    <script src="/scripts/services/insertable.js"></script>
-    <script src="/scripts/services/input.js"></script>
-    <script src="/scripts/services/insertables/smackTalk.js"></script>
-    <script src="/scripts/services/insertables/breakUps.js"></script>
-    <script src="/scripts/services/insertables/compliments.js"></script>
-    <script src="/scripts/services/insertables/excusesToLeave.js"></script>
-    <script src="/scripts/services/insertables/jokes.js"></script>
-    <script src="/scripts/services/insertables/subjectChanges.js"></script>
-    <script src="/scripts/filters/sentAt.js"></script>
-    
+    <script src="/scripts/services/Room.js"></script>
+    <script src="/scripts/services/Message.js"></script>
+    <script src="/scripts/services/Insertable.js"></script>
+    <script src="/scripts/services/Fixture.js"></script>
+    <script src="/scripts/filters/sentAt.js"></script>    
     <script src="/templates/setCurrentUserModal.html"></script>
 </head>
 <body>
@@ -86,7 +79,6 @@
         </section>
         <footer>
             <form id="footer-new-message" ng-submit="chatroom.addMessage(chatroom.newMessageContent)">
-<!--                <input id="footer-text-input" type="text" placeholder="Enter message here..." ng-model="chatroom.newMessageContent">-->
                 <textarea id="footer-text-input" placeholder="Enter message here..." ng-model="chatroom.newMessageContent" form="footer-new-message"></textarea>
                 <input id="footer-submit" type="submit" value="Enter">
             </form>

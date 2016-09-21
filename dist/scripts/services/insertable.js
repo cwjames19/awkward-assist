@@ -1,35 +1,70 @@
 (function() {
-    function Insertable($firebaseArray, SmackTalk) {
+    function Insertable($firebaseArray, Fixture) {
         
-        /*
-        * @desc = instance of Insertable to be returned
+                /*
+        * @desc = instance of SmackTalk to be returned
         * @type = Object
         */
         var Insertable = {};
         
-        /*
-        * Issues with this. Can use object["function-name"]
-        * to call a function with a string but can not
-        * call a service... maybe if I define the servic
-        * first though... wait, the service is already
-        * defined. Maybe I could use window like it demo's
-        * in the stack overflow question.
-        * ... I don't know... the controller won't connect to * the final smacktalk service
-        */
+        var currentInsertable;
         
-        Insertable.retrieveSimple = function(type) {
-            console.log("inside of the Insertable service in insertable.js");
-            console.log("Argument passed: " + type);
-            //return SmackTalk.retrieveTest();
-            return window[type].retrieveTest();
+        /*
+         * @function getExclusions()
+         * @desc get recent strings inserted to create
+         * list of exclusions
+         * @params ref, Firebase reference to current
+         * chatroom
+         * @return Array? FirebaseArray?
+        */
+        var getExclusions = function(array) {
+            var exclusions = [];
+            for(var i = 0; array[i]; i += 1) {
+                exclusions.push(array[i].index);
+            }
+            return exclusions;
+        }
+        
+        /*
+         * @ function pushIndex()
+         * @desc push the index of the string passed
+         * to InsertableCtrl to the top of the
+         * smackTalk exclusions list
+         * @params stringIndex, Number
+         * @return none
+        */
+        var pushIndex = function(roomId, stringIndex) {
+            currentInsertable.reference.push({roomId: roomId, index: stringIndex});
         };
         
-        var firebaseRef = firebase.database().ref()
+        var selectString = function(exclusions) {
+                available_strings = currentInsertable.library.filter(
+                function(value, index) {
+                    return exclusions.includes(index) === false;
+                }
+            );
+            return available_strings[Math.floor(Math.random() * available_strings.length)];
+        }
+        
+        Insertable.getInsertable = function(string, roomId) {
+            currentInsertable = Fixture.getInsertable(string);
+            
+            var exclusionsPromise = $firebaseArray(currentInsertable.reference.orderByChild('roomId').equalTo(roomId).limitToLast(Math.floor(currentInsertable.library.length * 0.66)));
+            
+            return exclusionsPromise.$loaded()
+                .then( function(array) {            
+                    var string = selectString(getExclusions(array));
+                    pushIndex(roomId, currentInsertable.library.indexOf(string));
+                    return string;
+                }, function(error) {
+                    console.error("An issue was encountered: ", error);
+                });
+        };
         
         return Insertable;
     }
     
     angular
         .module('awkwardAssist')
-        .service('Insertable', ['$firebaseArray', 'SmackTalk', Insertable]);
+        .service('Insertable', ['$firebaseArray', 'Fixture', Insertable]);
 })();
