@@ -1,7 +1,7 @@
 (function() {
     
     function ChatroomCtrl($rootScope, $scope, $firebaseArray, $uibModal, $cookies, Message, Insertable, SmackTalk) {
-                /*
+        /*
         * @desc alias for the controller's this object
         * @type {Object} 'this' object
         */
@@ -81,7 +81,7 @@
                 $cookies.put("awkwardAssistCurrentUser", username);
                 $rootScope.username = username;
             }, function(reason) {
-                console.log("The reason for dismissing the modal was: " + reason);
+                console.log("Modal dismissed on " + new Date() + " because: " + reason);
             });
         }
         

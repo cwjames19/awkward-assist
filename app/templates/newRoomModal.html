@@ -6,7 +6,7 @@
         </div>
         <div class="new-room-modal-body">
             
-            Enter a room name <input type="text" ng-model="newRoomModal.name" autofocus>
+            Enter a room name <input type="text" id="new-room-name" ng-model="newRoomModal.name" ng-keyup="newRoomModal.keyup($event)" autofocus>
         </div>
         <div class="new-room-modal-buttons">
             <input type="button" class="button" id="new-room-modal-ok-button" ng-click="newRoomModal.ok()" value="OK">

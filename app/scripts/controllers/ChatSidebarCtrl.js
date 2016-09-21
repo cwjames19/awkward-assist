@@ -13,11 +13,6 @@
         */
         ctrl.rooms = Room.all;
         
-        
-        
-        
-        
-        
         /*
         * @function this.openNewRoomModal()
         * @desc create and open a modal that will be used to create a new room
@@ -34,8 +29,7 @@
             modalInstance.result.then( function(newName) {
                 Room.add(newName);
             }, function(reason) {
-                console.log("Modal dismissed at " + new Date());
-                console.log("Modal dismissed because: " + reason);
+                console.log("Modal dismissed on " + new Date() + " because: " + reason);
             });
         };
         
@@ -46,9 +40,7 @@
         * @return {Object} event object broadcasted to scope of method call
         */
         ctrl.selectActiveRoom = function(room) {
-            var newRoom = room;
-            console.log(newRoom);
-            $rootScope.$broadcast('changeActiveRoom', newRoom);
+            $rootScope.$broadcast('changeActiveRoom', room);
         };
         
     }

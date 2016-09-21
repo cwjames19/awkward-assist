@@ -1,7 +1,0 @@
-<aside class="chatroom-sidebar" ng-controller="ChatSidebarCtrl as chatSidebar">
-    <header class="chatroom-sidebar-header">Awkward Assist</header>
-    <button class="new-chatroom-button" ng-click="chatSidebar.openNewRoomModal()">New room</button>
-    <ul class="chatroom-list">
-        <li class="chatroom-list-item" ng-repeat="room in chatSidebar.room.all" ng-click="main.activeRoom = room">{{ room.name }}</li>
-    </ul>
-</aside>

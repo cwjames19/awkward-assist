@@ -11,6 +11,11 @@
         ctrl.cancel = function() {
             $uibModalInstance.dismiss('Cancelled');
         }
+        
+        ctrl.keyup = function(event) {
+            console.log(event);
+            if (event.keyCode === 13) { ctrl.ok() }
+        }
     }
     
     angular
