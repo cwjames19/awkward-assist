@@ -14,7 +14,7 @@
     <link type="text/css" rel="stylesheet" href="styles/chatroom.css">
     <link rel="stylesheet" type="text/css" href="styles/insertable.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script>
         var config = {
             apiKey: "AIzaSyBgjDHluQhaDVw727m2cPpbGGi14NzsAtY",
@@ -25,11 +25,11 @@
         var rootRef = firebase.database().ref();
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/2.0.0/angularfire.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
     <script src="/scripts/app.js"></script>
     <script src="/scripts/run.js"></script>
     <script src="/scripts/controllers/MainCtrl.js"></script>
@@ -91,7 +91,7 @@
                     <span class="ion-help-buoy"></span>
                 </button>
                 <menu class="insertable-menu">
-                    <button class="smack-talk" ng-click="insertable.getSmackTalk()">Talk some smack!</button>
+                    <button class="smack-talk" ng-click="insertable.smackTalkTest()">Talk some smack!</button>
                 </menu>
             </div>
         </footer>
