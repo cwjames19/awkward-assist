@@ -5,22 +5,15 @@
         var insertText = function(str) {
             $scope.$parent.chatroom.newMessageContent += str;
         };
-        
-//        ctrl.insertSimple = function(type) {
-//            console.log("In the insertSimple method in InsertableCtrl");
-//            console.log("Argument passed: " + type);
-//            console.log(Insertable.retrieveSimple(type));
-//        }
-        
-        ctrl.smackTalkTest = function() {
-            console.log("In InsertableCtrl");
-            text = SmackTalk.getSmackTalkTest($scope.$parent.chatroom.activeRoom.$id);
-            console.log("Back in Insertable Ctrl. Here's the smackTalk: " + text);
-            insertText(text);
-        }
-        
+                
         ctrl.smackTalk = function() {
-            SmackTalk.getSmackTalk($scope.$parent.chatroom.activeRoom.$id);
+            var insertableString = SmackTalk.getSmackTalk($scope.$parent.chatroom.activeRoom.$id);
+            insertableString
+                .then(function(string) {
+                    insertText(string);
+                }, function(error) {
+                    console.error("A problem occurred: ", error);
+                });
         }
     }
     
