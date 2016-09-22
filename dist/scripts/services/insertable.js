@@ -18,12 +18,10 @@
          * @return Array? FirebaseArray?
         */
         var getExclusions = function(array) {
-            console.log("array: " + array)
             var exclusions = [];
             for(var i = 0; array[i]; i += 1) {
                 exclusions.push(array[i].index);
             }
-            console.log("exclusions: " + exclusions);
             return exclusions;
         }
         
