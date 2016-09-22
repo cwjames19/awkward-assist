@@ -21,7 +21,7 @@
         * @func Fixture.getInsertable()
         * @desc retrieves a fixture as specified by the parameter
         * @param String, name of the desired fixture
-        * @returns Object, fixture with information on insertable text
+        * @returns Object, fixture with insertable text and database reference
         */
         Fixture.getInsertable = function(string) {
             return eval(string);
