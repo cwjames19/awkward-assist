@@ -17,6 +17,12 @@
         
         var subjectChanges  = {};
         
+        /*
+        * @func Fixture.getInsertable()
+        * @desc retrieves a fixture as specified by the parameter
+        * @param String, name of the desired fixture
+        * @returns Object, fixture with information on insertable text
+        */
         Fixture.getInsertable = function(string) {
             return eval(string);
         };
