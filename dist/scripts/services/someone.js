@@ -24,7 +24,6 @@
         * @returns Object, fixture with insertable text and database reference
         */
         Fixture.getInsertable = function(string) {
-            console.log("You are in fixture.js");
             return eval(string);
         };
         
