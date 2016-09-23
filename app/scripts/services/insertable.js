@@ -1,5 +1,5 @@
 (function() {
-    function Insertable($firebaseArray, Fixture) {
+    function Insertable($firebaseArray, TextSet) {
         
                 /*
         * @desc = instance of SmackTalk to be returned
@@ -47,7 +47,7 @@
         }
         
         Insertable.getInsertable = function(string, roomId) {
-            currentInsertable = Fixture.getInsertable(string);
+            currentInsertable = TextSet.getInsertable(string);
             
             var exclusionsPromise = $firebaseArray(currentInsertable.reference.orderByChild('roomId').equalTo(roomId).limitToLast(Math.floor(currentInsertable.library.length * 0.66)));
             
