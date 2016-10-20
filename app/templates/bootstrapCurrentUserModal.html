@@ -6,7 +6,7 @@
         </div>
         <div class="set-current-user-modal-body">
             
-            Enter a username <input type="text" ng-model="setCurrentUserModal.username" autofocus>
+            Enter a username <input type="text" ng-model="setCurrentUserModal.username" ng-keyup="setCurrentUserModal.keyup($event)" autofocus>
         </div>
         <div class="set-current-user-modal-buttons">
             <input type="button" class="button" id="bootstrap-current-user-modal-ok-button" ng-click="setCurrentUserModal.ok()" value="OK">

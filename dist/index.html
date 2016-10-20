@@ -87,7 +87,31 @@
                     <span class="ion-help-buoy"></span>
                 </button>
                 <menu class="insertable-menu">
-                    <button class="smack-talk" ng-click="insertable.smackTalk()">Talk some smack!</button>
+                    <h1>What do you want to do?</h1>
+                    <div class="menu-option">
+                        <span class="ion-nuclear"> </span>
+                        <h2 class="smack-talk" ng-click="insertable.smackTalk()">Talk some smack</h2>
+                    </div>
+                    <div class="menu-option">
+                        <span class="ion-heart-broken"> </span>
+                        <h2 class="breakup" ng-click="insertable.breakup()">Break up</h2>
+                    </div>
+                    <div class="menu-option">
+                        <span class="ion-thumbsup"> </span>
+                        <h2 class="compliment" ng-click="insertable.compliment()">Give a compliment</h2>
+                    </div>
+                    <div class="menu-option">
+                        <span class="ion-log-out"> </span>
+                        <h2 class="excuseToLeave" ng-click="insertable.excuseToLeave()">Get out of here</h2>
+                    </div>
+                    <div class="menu-option">
+                        <span class="ion-happy-outline"> </span>
+                        <h2 class="joke" ng-click="insertable.joke()">Tell a joke</h2>
+                    </div>
+                    <div class="menu-option">
+                        <span class="ion-refresh"> </span>
+                        <h2 class="subjectChange" ng-click="insertable.subjectChange()">Change the subject...</h2>
+                    </div>
                 </menu>
             </div>
         </footer>

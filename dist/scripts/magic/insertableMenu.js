@@ -41,6 +41,16 @@ insertableAll.mouseleave(function() {
     });
 });
 
+$(".insertable-menu h2").on("mouseover", function() {
+    var icon = $( event.target.previousElementSibling );
+    icon.css({color: "#00B7B7"});
+});
+
+$(".insertable-menu h2").on("mouseleave", function() {
+    var icon = $( event.target.previousElementSibling );
+    icon.css({color: "#008E8E"});
+});
+
 showButtons = function() {
     menu.children().animate({
         height: "2rem",
