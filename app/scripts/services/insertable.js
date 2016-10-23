@@ -1,7 +1,7 @@
 (function() {
     function Insertable($firebaseArray, Fixture) {
         
-                /*
+        /*
         * @desc = instance of SmackTalk to be returned
         * @type = Object
         */
@@ -46,15 +46,14 @@
             return available_strings[Math.floor(Math.random() * available_strings.length)];
         }
         
-        Insertable.getInsertable = function(string, roomId) {
-            currentInsertable = Fixture.getInsertable(string);
+        Insertable.retrieveInsertable = function(string, roomId) {
+            currentInsertable = Fixture.getFixture(string);
             
             var exclusionsPromise = $firebaseArray(currentInsertable.reference.orderByChild('roomId').equalTo(roomId).limitToLast(Math.floor(currentInsertable.library.length * 0.66)));
             
             return exclusionsPromise.$loaded()
-                .then( function(array) {            
-                    var string = selectString(getExclusions(array));
-                    console.log("index: " + currentInsertable.library.indexOf(string));
+                .then( function(recentlyUsedStrings) {
+                    var string = selectString(getExclusions(recentlyUsedStrings));
                     pushIndex(roomId, currentInsertable.library.indexOf(string));
                     return string;
                 }, function(error) {

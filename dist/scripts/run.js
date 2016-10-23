@@ -12,6 +12,10 @@
             ctrl.ok = function() {
                 $uibModalInstance.close(ctrl.username);
             };
+            
+            ctrl.keyup = function(event) {
+                if (event.keyCode === 13) { ctrl.ok() }
+            };
         };
         
         modalController.$inject = ['$uibModalInstance', '$rootScope'];
@@ -34,7 +38,7 @@
                     $rootScope.username = username;
                 }
             }, function(reason) {
-                console.log("Modal dismissed somehow... Here's the reason why: " + reason);
+                console.log("Modal dismissed because: " + reason);
                 tryAgain();
             });
             

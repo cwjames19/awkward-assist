@@ -80,6 +80,7 @@
             modalInstance.result.then(function(username) {
                 $cookies.put("awkwardAssistCurrentUser", username);
                 $rootScope.username = username;
+                $rootScope.$broadcast('changeActiveRoom', ctrl.activeRoom)
             }, function(reason) {
                 console.log("Modal dismissed on " + new Date() + " because: " + reason);
             });
@@ -106,6 +107,7 @@
         * listen for a change in chatroom selection
         */
         $scope.$on('changeActiveRoom', function(event, newRoom) {
+            ctrl.activeUsername = $rootScope.username;
             ctrl.setActiveRoom(newRoom);
         });
     }
