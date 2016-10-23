@@ -91,6 +91,7 @@ div.chatroom-message {
 .message-content {
     padding-right: 2rem;
     word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .even {

@@ -1,11 +1,15 @@
 (function() {
-    function SetCurrentUserModalCtrl($uibModalInstance) {
+    function SetCurrentUserModalCtrl($uibModalInstance, $window, $rootscope) {
         var ctrl = this;
         
         ctrl.username = "";
         
         ctrl.ok = function() {
-            $uibModalInstance.close(ctrl.username);
+            if (ctrl.username !== "") {
+                $uibModalInstance.close(ctrl.username);
+            } else {
+                $window.alert("Username can not be blank.");
+            }
         };
         
         ctrl.cancel = function() {
@@ -13,12 +17,11 @@
         }
         
         ctrl.keyup = function(event) {
-            console.log(event);
             if (event.keyCode === 13) { ctrl.ok() }
-        }
+        };
     }
     
     angular
         .module('awkwardAssist')
-        .controller('SetCurrentUserModalCtrl', ['$uibModalInstance', '$rootScope', SetCurrentUserModalCtrl]);
+        .controller('SetCurrentUserModalCtrl', ['$uibModalInstance', '$window', '$rootScope', SetCurrentUserModalCtrl]);
 })();

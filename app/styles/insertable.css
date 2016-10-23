@@ -39,7 +39,7 @@
 .insertable-menu {
     position: absolute;
     display: none;
-    right: 0px;
+    right: 2px;
     height: 0px;
     width: 0px;
     bottom: 3rem;
@@ -48,6 +48,7 @@
     color: #008E8E;
     margin: 0px;
     padding: 20px 0px 0px;
+    font-family: 'Cabin', sans-serif;
 }
 
 .insertable-menu h1 {
@@ -67,6 +68,10 @@
 .menu-option h2, .menu-option span{
     display: inline-block;
     margin: auto;
+}
+
+.menu-option h2 {
+    padding-left: 0.5rem;
 }
 
 .menu-option span {

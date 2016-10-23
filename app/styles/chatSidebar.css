@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin:500,600);
+
 .chatroom-sidebar {
     display: inline-block;
     position: absolute;
@@ -20,7 +22,8 @@
     display: block;
     margin: auto;
     position: relative;
-    font-size: 1.5rem;
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.8rem;
     font-weight: bold;
     color: black;
     text-align: left;

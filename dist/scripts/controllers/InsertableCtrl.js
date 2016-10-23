@@ -5,9 +5,9 @@
         var insertText = function(string) {
             $scope.$parent.chatroom.newMessageContent += string;
         };
-                
-        ctrl.smackTalk = function() {
-            var insertableString = Insertable.getInsertable('smackTalk', $scope.$parent.chatroom.activeRoom.$id);
+        
+        ctrl.getInsertable = function(insertableType) {
+            var insertableString = Insertable.retrieveInsertable(insertableType, $scope.$parent.chatroom.activeRoom.$id);
             insertableString
                 .then(function(string) {
                     insertText(string);
