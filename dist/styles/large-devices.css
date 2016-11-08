@@ -3,13 +3,40 @@ body {
     width: 100vw;
 }
 
-body * {
-/*    border: 1px solid black;*/
+.no-padding {
+    padding: 0em;
 }
 
-.container-fluid {
-    min-height: 100%;
-    max-height: 100%;
+.mobile-top-row {
+    height: 3em;
+}
+
+.mobile-burger {
+    cursor: pointer;
+    background-color: #00ADAD;
+}
+
+.mobile-burger div {
+    height: 100%;
+    min-width: 31.5px;
+    cursor: pointer;
+    background-color: #00ADAD;
+    float: left;
+    display: inline-block;
+    width: 60px;
+}
+
+.mobile-burger span {
+    margin-top: .125em;
+    font-size: 2.25em;
+    background-color: #00ADAD;
+    color: white;
+}
+
+.mobile-header {
+    height: 100%;
+    width: calc(100% - 70px);
+    float: right;
 }
 
 .aside {
@@ -23,30 +50,39 @@ body * {
     border: 1px solid black;
 }
 
-.main-room {
+.room {
     height: calc(100vh - 13em);
     border: 1px solid black;
 }
 
-.main-footer {
+@media (max-width: 768px) {
+    .room {
+        height: calc(100vh - 10em);
+    }
+}
+
+footer {
     height: 7em;
     border: 1px solid black;
+    width: 100%;
 }
 
-.main-message-btn-container div div {
-    height: 3.48em;
+.message-input {
+    height: 6.96em;
 }
 
-.main-message-btn-container a {
+.footer-btn-container div {
+    min-height: 3.48em;
+}
+
+.footer-btn-container a {
     cursor: pointer;
 }
 
-.main-btn-submit {
+.footer-btn-submit {
     background-color: lightgrey;
 }
 
-.main-btn-insertable {
+.footer-btn-insertable {
     background-color: #00ADAD;
 }
-
-

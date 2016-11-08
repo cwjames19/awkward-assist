@@ -2,6 +2,10 @@ body * {
 /*    border: 1px solid black;*/
 }
 
+.no-padding {
+    padding: 0em;
+}
+
 .container-fluid {
     min-height: 100vh;
     max-height: 100vh;
@@ -34,7 +38,7 @@ body * {
 }
 
 .container-fluid .mobile-room {
-    height: calc(100vh - 8em);
+    height: calc(100vh - 10em);
 }
 
 .mobile-footer {
@@ -46,11 +50,11 @@ body * {
 .mobile-message-input {
     box-sizing: border-box;
     border: 1px solid black;
-    height: 5em;
+    height: 7em;
 }
 
-.mobile-message-btn-container div div {
-    height: 2.5em;
+.mobile-message-btn-container div {
+    height: 3.5em;
 }
 
 .mobile-message-btn-container a {
