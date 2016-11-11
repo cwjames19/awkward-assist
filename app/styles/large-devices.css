@@ -132,12 +132,44 @@ body {
 .room {
     height: calc(100vh - 13em);
     border: 1px solid black;
+    padding: 0;
+    overflow-y: scroll;
+}
+.room-item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .5em 1.2em;
 }
 
-@media (max-width: 768px) {
-    .room {
-        height: calc(100vh - 10em);
-    }
+.even {
+    background-color: #f4f4f4;
+}
+
+.odd {
+    background-color: white;
+}
+
+.room-item div {
+    flex: 1 0 100%;
+    display: flex;
+}
+
+.room-item.own div {
+    justify-content: flex-end;
+}
+
+.room-item-username {
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+.room-item-username.own {
+    margin: 0 0 0 1em;
+    order: 1;
+}
+
+.room-item-sent-at {
+    opacity: .5;
 }
 
 #footer-container {
@@ -184,22 +216,8 @@ body {
     font-size: 2em;
 }
 
-.message-input {
-    height: 6.96em;
-}
-
-.footer-btn-container div {
-    min-height: 3.48em;
-}
-
-.footer-btn-container a {
-    cursor: pointer;
-}
-
-.footer-btn-submit {
-    background-color: lightgrey;
-}
-
-.footer-btn-insertable {
-    background-color: #00ADAD;
+@media (max-width: 768px) {
+    .room {
+        height: calc(100vh - 10em);
+    }
 }
