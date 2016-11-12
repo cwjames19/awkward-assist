@@ -290,3 +290,9 @@ body {
         height: calc(100vh - 10em);
     }
 }
+
+@media (max-height: 550px) and (min-width: 769px) {
+    #insertable-container {
+        
+    }
+}
