@@ -31,7 +31,7 @@
         */
         Room.add = function(newRoomName) {
             if (typeof newRoomName === "string") {
-                rooms.$add({name: newRoomName});
+                return rooms.$add({name: newRoomName});
             }
         };
         

@@ -1,0 +1,40 @@
+.modal-dialog {
+    position: absolute;
+    top: 25vh;
+    left: calc(50vw - 14em);
+    height: 18em;
+    width: 28em;
+    border-radius: 8px;
+}
+
+.my-modal-content {
+    height: 16em;
+    width: 100%;
+    padding: 1em;
+    background-color:burlywood;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.my-modal-content h2 {
+    margin: 0 auto 1em;
+    flex: 5 100%;
+}
+
+.my-modal p {
+    flex: 1 100%;
+}
+
+.my-modal-input {
+    flex: 3 100%;
+}
+
+.my-modal-btn-container {
+    flex: 3 100%;
+}
+
+#my-modal-okay-button
+    margin-right: 2em;
+}

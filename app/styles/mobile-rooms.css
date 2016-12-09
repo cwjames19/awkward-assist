@@ -1,0 +1,45 @@
+.mobile-rooms-container {
+    height: calc(100vh - 3em);
+    width: 100%;
+    background-color: #5f73e8;
+    color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.mobile-rooms-container div {
+    
+}
+
+#mobile-rooms-top-header {
+    display: inline-block;
+    margin: 1.8rem 0rem 0rem 2rem;
+}
+
+.mobile-rooms-second-row * {
+    display: inline-block;
+}
+
+.mobile-rooms-second-row button {
+    margin-left: 2rem;
+    color: black;
+}
+
+#mobile-rooms-second-header {
+    margin: 0.8rem 0rem 0.5rem 2rem;
+}
+
+.mobile-rooms-room {
+    border-bottom: solid 1px lightgrey;
+    padding: .4em .5em .4em 2.5em;
+}
+
+.mobile-rooms-room a {
+    color: lightgrey;
+    font-size: 1.5em;
+}
+
+.mobile-rooms-room a:hover {
+    cursor: pointer;
+}

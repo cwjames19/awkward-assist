@@ -1,0 +1,12 @@
+<div class="mobile-rooms-container" ng-controller="ChatSidebarCtrl as mobileRooms">
+    <div class="mobile-rooms-top-row">
+        <h1 id="mobile-rooms-top-header">Choose a Room</h1>
+    </div>
+    <div class="mobile-rooms-second-row">
+        <h3 id="mobile-rooms-second-header">Or start a new one!</h3>
+        <button class="btn" ng-click="mobileRooms.openNewRoomModal()">Create</button>
+    </div>
+    <div class="mobile-rooms-room" ng-repeat="room in mobileRooms.rooms">
+        <a ng-click="mobileRooms.selectActiveRoom(room)">{{ room.name }}</a>
+    </div>
+</div>

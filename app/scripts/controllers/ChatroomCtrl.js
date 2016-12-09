@@ -1,6 +1,6 @@
 (function() {
     
-    function ChatroomCtrl($rootScope, $scope, $firebaseArray, $uibModal, $cookies, Message, Insertable, SmackTalk) {
+    function ChatroomCtrl($rootScope, $scope, $firebaseArray, $uibModal, $cookies, $state, Message, Insertable, SmackTalk) {
         /*
         * @desc alias for the controller's this object
         * @type {Object} 'this' object
@@ -51,7 +51,16 @@
         
         ctrl.activeUsername = $rootScope.username;
         
-        
+        ctrl.transitionToMobileRooms = function() {
+            $state.go('mobile-rooms', {});
+            
+            $( window ).off('resize', "**");
+            $( window ).on('resize', function(event) {
+                if(event.target.innerWidth >= 768 && $state.is('mobile-rooms')) {
+                    $state.go('root', {});
+                }
+            });
+        };
         
         /*
         * @function ctrl.setActiveRoom
@@ -114,5 +123,5 @@
     
     angular
         .module('awkwardAssist')
-        .controller('ChatroomCtrl', ['$rootScope', '$scope', '$firebaseArray', '$uibModal', '$cookies', 'Message', 'Insertable', ChatroomCtrl]);
+        .controller('ChatroomCtrl', ['$rootScope', '$scope', '$firebaseArray', '$uibModal', '$cookies', '$state', 'Message', 'Insertable', ChatroomCtrl]);
 })();

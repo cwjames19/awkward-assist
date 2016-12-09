@@ -1,16 +1,12 @@
-<div class="set-current-user-modal-background"></div>
-<div class="set-current-user-modal-container">
-    <div class="set-current-user-modal-content">
-        <div class="set-current-user-modal-header">
-            <h3>Create Username</h3>
-        </div>
-        <div class="set-current-user-modal-body">
-            
-            Enter a username <input type="text" ng-model="setCurrentUserModal.username" ng-keyup="setCurrentUserModal.keyup($event)" autofocus>
-        </div>
-        <div class="set-current-user-modal-buttons">
-            <input type="button" class="button" id="set-current-user-modal-ok-button" ng-click="setCurrentUserModal.ok()" value="OK">
-            <input type="button" class="button" id="set-current-user-modal-cancel-button" ng-click="setCurrentUserModal.cancel()" value="Cancel">
-        </div>
+<div class="my-modal-content">
+    <h3>Choose a Username</h3>
+    <p>(Max. 48 characters)</p>
+    <div>
+        <label>Enter a username</label>
+        <input type="text" ng-model="setCurrentUserModal.username" ng-keyup="setCurrentUserModal.keyup($event)" autofocus>
+    </div>
+    <div class="my-modal-btn-container">
+        <input type="button" class="btn" id="my-modal-ok-button" ng-click="setCurrentUserModal.ok()" value="OK">
+        <input type="button" class="btn" id="my-modal-cancel-button" ng-click="setCurrentUserModal.cancel()" value="Cancel">
     </div>
 </div>
