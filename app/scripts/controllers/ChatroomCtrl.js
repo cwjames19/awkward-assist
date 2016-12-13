@@ -51,12 +51,12 @@
         
         ctrl.activeUsername = $rootScope.username;
         
-        ctrl.transitionToMobileRooms = function() {
-            $state.go('mobile-rooms', {});
+        ctrl.transitionState = function(newState) {
+            $state.go(newState, {});
             
             $( window ).off('resize', "**");
             $( window ).on('resize', function(event) {
-                if(event.target.innerWidth >= 768 && $state.is('mobile-rooms')) {
+                if(event.target.innerWidth >= 768 && !$state.is('root')) {
                     $state.go('root', {});
                 }
             });

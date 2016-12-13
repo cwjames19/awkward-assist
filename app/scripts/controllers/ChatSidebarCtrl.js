@@ -20,7 +20,6 @@
         * @return {Object} event object broadcasted to scope of method call
         */
         ctrl.selectActiveRoom = function(room) {
-            console.log("In selectActiveRoom()");
             $state.go('root', {})
                 .then( function() {
                     $rootScope.$broadcast('changeActiveRoom', room);

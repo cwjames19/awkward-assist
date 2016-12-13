@@ -1,0 +1,13 @@
+<div class="mobile-state-container" ng-controller="ChatroomCtrl as mobileInsertable">
+    <div id="mobile-insertable-menu-container" ng-controller="InsertableCtrl as mobileInsertable">
+        <a ui-sref='root' id="mobile-state-close"><span class="ion-android-close"></span></a>
+        <h2>What do you want to do?</h2>
+        <button ng-click="mobileInsertable.getInsertable('smackTalk')"><span class="ion-nuclear"></span> Talk some smack</button>
+        <button ng-click="mobileInsertable.getInsertable('breakup')"><span class="ion-heart-broken"></span> Break up</button>
+        <button ng-click="mobileInsertable.getInsertable('compliment')"><span class="ion-thumbsup"></span> Give a compliment</button>
+        <button ng-click="mobileInsertable.getInsertable('excuseToLeave')"><span class="ion-log-out"></span> Leave conversation</button>
+        <button ng-click="mobileInsertable.getInsertable('joke')"><span class="ion-happy-outline"></span> Tell a joke</button>
+        <button ng-click="mobileInsertable.getInsertable('subjectChange')"><span class="ion-refresh"></span> Change the subject...</button>
+    </div>
+    <ng-include src="'/templates/footer.html'" />
+</div>

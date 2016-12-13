@@ -1,5 +1,5 @@
 (function() {
-    function InsertableCtrl($scope, $rootScope, $firebaseArray, Insertable){
+    function InsertableCtrl($scope, $rootScope, $firebaseArray, $state, $window, Insertable){
         var ctrl = this;
                 
         var insertText = function(string) {
@@ -7,17 +7,25 @@
         };
         
         ctrl.getInsertable = function(insertableType) {
-            var insertableString = Insertable.retrieveInsertable(insertableType, $scope.$parent.chatroom.activeRoom.$id);
-            insertableString
-                .then(function(string) {
-                    insertText(string);
-                }, function(error) {
-                    console.error("A problem occurred: ", error);
-                });
-        }
+            let activeRoom = $scope.$parent.chatroom.activeRoom;
+            if (activeRoom) {
+                var insertableString = Insertable.retrieveInsertable(insertableType, activeRoom.$id);
+                insertableString
+                    .then(function(string) {
+                        insertText(string);
+                        $state.go('root', {});
+                    }, function(error) {
+                        console.error("A problem occurred: ", error);
+                    }
+                );
+            } else {
+                $window.alert("Pick a chatroom before writing your message.");
+            }
+            
+        };
     }
     
     angular
         .module('awkwardAssist')
-        .controller('InsertableCtrl', ['$scope', '$rootScope', '$firebaseArray', 'Insertable', InsertableCtrl]);
+        .controller('InsertableCtrl', ['$scope', '$rootScope', '$firebaseArray', '$state', '$window', 'Insertable', InsertableCtrl]);
 })();

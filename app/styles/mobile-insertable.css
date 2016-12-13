@@ -1,0 +1,40 @@
+@import 'mobile-state.css';
+
+#mobile-insertable-menu-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0em;
+    background-color: #ededf9;
+    color: #00ADAD;
+    background-color: lightgrey;
+    font-size: 1.8em;
+    color: #eaeaea;
+}
+
+#mobile-insertable-menu-container #mobile-state-close {
+    color: darkgrey;
+}
+
+#mobile-insertable-menu-container h2 {
+    margin: 0.4em 0rem 0em 0em;
+    color: #00ADAD;
+    text-align: center;
+}
+
+#mobile-insertable-menu-container button {
+    border: 1px solid black;
+    background-color: #00ADAD;
+    flex: 2 3 14%;
+    color: #EAEAEA;
+    width: 80%;
+    margin: 0.4em;
+    line-height: initial;
+}
+
+#mobile-insertable-menu-container button:hover {
+    text-decoration: underline;
+    color: black;
+    background-color: #58cece;
+}

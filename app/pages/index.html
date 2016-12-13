@@ -37,62 +37,35 @@
     <!-- Angular Cookies -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
     
-<!--
-     Stylesheets 
-    <link type="text/css" rel="stylesheet" href="../styles/main.css" />
--->
+    <!-- Stylesheets -->
+    <link type="text/css" rel="stylesheet" href="/styles/large-devices.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/mobile-devices.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/mobile-insertable.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/mobile-rooms.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/mobile-state.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/modals.css" />
     
-    <!-- Stylesheets for Brackets Live Preview-->
-    <link type="text/css" rel="stylesheet" href="../styles/large-devices.css" />
-    <link type="text/css" rel="stylesheet" href="../styles/mobile-devices.css" />
-    <link type="text/css" rel="stylesheet" href="../styles/modals.css" />
-    <link type="text/css" rel="stylesheet" href="../styles/mobile-rooms.css" />
-    
-<!--     Scripts -->
+    <!--     Scripts -->
     <script src="/scripts/app.js"></script>
     <script src="/scripts/run.js"></script>
-<!--         Controllers -->
+    <!--         Controllers -->
     <script src="/scripts/controllers/MainCtrl.js"></script>
     <script src="/scripts/controllers/ChatSidebarCtrl.js"></script>
     <script src="/scripts/controllers/ChatroomCtrl.js"></script>
     <script src="/scripts/controllers/NewRoomModalCtrl.js"></script>
     <script src="/scripts/controllers/SetCurrentUserModalCtrl.js"></script>
     <script src="/scripts/controllers/InsertableCtrl.js"></script>
-<!--         Services -->
+    <!--         Services -->
     <script src="/scripts/services/Room.js"></script>
     <script src="/scripts/services/Message.js"></script>
     <script src="/scripts/services/Insertable.js"></script>
     <script src="/scripts/services/fixtures.js"></script>
-<!--         Filters -->
+    <!--         Filters -->
     <script src="/scripts/filters/sentAt.js"></script>
     
-<!--
-     Scripts 
-    <script src="../scripts/app.js"></script>
-    <script src="../scripts/run.js"></script>
-         Controllers 
-    <script src="../scripts/controllers/MainCtrl.js"></script>
-    <script src="../scripts/controllers/ChatSidebarCtrl.js"></script>
-    <script src="../scripts/controllers/ChatroomCtrl.js"></script>
-    <script src="../scripts/controllers/NewRoomModalCtrl.js"></script>
-    <script src="../scripts/controllers/SetCurrentUserModalCtrl.js"></script>
-    <script src="../scripts/controllers/InsertableCtrl.js"></script>
-         Services 
-    <script src="../scripts/services/Room.js"></script>
-    <script src="../scripts/services/Message.js"></script>
-    <script src="../scripts/services/Insertable.js"></script>
-    <script src="../scripts/services/fixtures.js"></script>
-         Filters 
-    <script src="../scripts/filters/sentAt.js"></script>
--->
-    
-<!--     Templates -->
+    <!--     Templates -->
     <script src="/templates/setCurrentUserModal.html"></script>
     
-<!--
-     Templates 
-    <script src="../templates/setCurrentUserModal.html"></script>
--->
 </head>
 <body>
     <div class="container-fluid" ng-controller="ChatroomCtrl as chatroom">
@@ -105,7 +78,7 @@
                         </div>
                     </a>
                     <ul class="mobile-menu" uib-dropdown-menu role="menu" aria-labelledby="mobile-menu-button">
-                        <li role="menuitem"><a ng-click="chatroom.transitionToMobileRooms()">Enter a Room</a></li>
+                        <li role="menuitem"><a ng-click="chatroom.transitionState('mobile-rooms')">Enter New Room</a></li>
                         <li role="menuitem"><a ng-click="chatroom.openSetCurrentUserModal()">Change Username</a></li>
                     </ul>
                 </div>

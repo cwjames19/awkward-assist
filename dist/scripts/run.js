@@ -1,5 +1,7 @@
 (function() {
-    function awkwardAssistCookies($rootScope, $cookies, $uibModal, $window, $state) {
+    function appLoad($rootScope, $cookies, $uibModal, $window, $state) {
+        
+        $rootScope.$state = $state;
                 
         var modalController = function($uibModalInstance, $rootScope) {
             /*
@@ -56,5 +58,5 @@
     
     angular
         .module('awkwardAssist')
-        .run(['$rootScope', '$cookies', '$uibModal', '$window', '$state', awkwardAssistCookies]);
+        .run(['$rootScope', '$cookies', '$uibModal', '$window', '$state', appLoad]);
 })();

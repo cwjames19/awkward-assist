@@ -1,45 +1,48 @@
-.mobile-rooms-container {
-    height: calc(100vh - 3em);
+@import 'mobile-state.css';
+
+.rooms-list-container {
     width: 100%;
     background-color: #5f73e8;
     color: lightgrey;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
 }
 
-.mobile-rooms-container div {
-    
-}
-
-#mobile-rooms-top-header {
+#rooms-list-top-header {
     display: inline-block;
-    margin: 1.8rem 0rem 0rem 2rem;
+    margin: 1.8rem 5rem 0rem 2rem;
 }
 
-.mobile-rooms-second-row * {
-    display: inline-block;
+.rooms-list-second-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
 }
 
-.mobile-rooms-second-row button {
+.rooms-list-second-row button {
+    margin-right: 2rem;
     margin-left: 2rem;
     color: black;
 }
 
-#mobile-rooms-second-header {
+#rooms-list-second-header {
     margin: 0.8rem 0rem 0.5rem 2rem;
 }
 
-.mobile-rooms-room {
+#rooms-list {
+    overflow-y: auto;
+}
+
+.rooms-list-room {
     border-bottom: solid 1px lightgrey;
     padding: .4em .5em .4em 2.5em;
 }
 
-.mobile-rooms-room a {
+.rooms-list-room a {
     color: lightgrey;
     font-size: 1.5em;
 }
 
-.mobile-rooms-room a:hover {
+.rooms-list-room a:hover {
     cursor: pointer;
 }
