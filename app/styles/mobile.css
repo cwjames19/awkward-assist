@@ -1,0 +1,73 @@
+body * {
+/*    border: 1px solid black;*/
+}
+
+.container-fluid {
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+.mobile-top-row {
+    height: 3em;
+}
+
+.mobile-top-row div {
+    height: 100%;
+}
+
+.mobile-burger {
+    cursor: pointer;
+    background-color: #00ADAD;
+}
+
+.mobile-burger div {
+    min-width: 4.6em;
+    cursor: pointer;
+    background-color: #00ADAD;
+}
+
+.mobile-burger span {
+    margin-top: .125em;
+    font-size: 2.25em;
+    background-color: #00ADAD;
+    color: white;
+}
+
+.container-fluid .mobile-room {
+    height: calc(100vh - 8em);
+}
+
+footer {
+    position: relative;
+    bottom: 0em;
+    height: 5em;
+}
+
+.mobile-message-input {
+    box-sizing: border-box;
+    border: 1px solid black;
+    height: 5em;
+}
+
+.mobile-message-button-container div div {
+    height: 2.5em;
+}
+
+.mobile-message-button-container a {
+    cursor: pointer;
+}
+
+.mobile-footer-btn-container {
+    height: 2.5em;
+}
+
+.mobile-btn-submit {
+    background-color: lightgrey;
+}
+.mobile-btn-submit button {
+    position: relative;
+}
+
+.mobile-btn-insertable {
+    background-color: #00ADAD;
+}
