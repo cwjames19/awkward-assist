@@ -24,8 +24,15 @@
             
         };
         
-        ctrl.transitionState = function(newState) {
-            $scope.$parent.chatroom.transitionState(newState);
+        ctrl.openMobileMenu = function(newState) {
+            let xsScreenBreakpoint = 768;
+            console.log($( window ));
+            console.log($( window )[0]);
+            console.log($( window )[0].innerWidth);
+            if( $( window )[0].innerWidth < xsScreenBreakpoint ) {
+                console.log("In the if block");
+                $scope.$parent.chatroom.transitionState('mobile-insertable');
+            }
         }
     }
     

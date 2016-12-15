@@ -52,7 +52,7 @@
         ctrl.activeUsername = $rootScope.username;
         
         ctrl.transitionState = function(newState) {
-            const xsScreenBreakpoint = 768;
+            var xsScreenBreakpoint = 768;
             $state.go(newState, {});
             
             $( window ).off('resize', "**");
@@ -114,7 +114,7 @@
         }
         
         ctrl.handleEnterPress = function(event) {
-            const carriageReturnCharCode = 13;
+            var carriageReturnCharCode = 13;
             if (event.charCode == carriageReturnCharCode) {
                 if(event.shiftKey) {
                     ctrl.newMessageContent.concat(String.fromCharCode(carriageReturnCharCode));

@@ -1,7 +1,7 @@
 var btn = $("#btn-help");
 var container = $("#insertable-container");
 var btnAndContainer = $("#btn-help-container");
-const xsScreenBreakpoint = 768;
+var xsScreenBreakpoint = 768;
 
 console.log("about to add event listeners");
 btnAndContainer.mouseenter( function(event) {
