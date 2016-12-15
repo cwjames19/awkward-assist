@@ -37,7 +37,7 @@ body * {
     height: calc(100vh - 8em);
 }
 
-footer {
+.mobile-footer {
     position: relative;
     bottom: 0em;
     height: 5em;
@@ -49,16 +49,12 @@ footer {
     height: 5em;
 }
 
-.mobile-message-button-container div div {
+.mobile-message-btn-container div div {
     height: 2.5em;
 }
 
-.mobile-message-button-container a {
+.mobile-message-btn-container a {
     cursor: pointer;
-}
-
-.mobile-footer-btn-container {
-    height: 2.5em;
 }
 
 .mobile-btn-submit {
