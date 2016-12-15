@@ -3,7 +3,7 @@
     <div id="btn-container">
         <button type="button" class="btn" id="btn-send" ng-click="chatroom.addMessage(chatroom.newMessageContent)">Send</button>
 
-        <div id="btn-help-container" ng-controller="InsertableCtrl as insertable" ng-click="insertable.transitionState('mobile-insertable')">
+        <div id="btn-help-container" ng-controller="InsertableCtrl as insertable" ng-click="insertable.openMobileMenu()">
             <button type="button" class="btn" id="btn-help">
                 <span class="ion-help-buoy"></span>
             </button>
