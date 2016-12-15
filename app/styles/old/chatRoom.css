@@ -94,14 +94,6 @@ div.chatroom-message {
     white-space: pre-wrap;
 }
 
-.even {
-    background-color: #F6F7FB;
-}
-
-.odd {
-    background-color: white;
-}
-
 .own.message-top-line {
     text-align: right;
 }

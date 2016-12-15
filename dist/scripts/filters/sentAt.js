@@ -16,13 +16,13 @@
                 
                 var hours = longDate.getHours() % 12;
                 var midday;
-                (hours > 11) ? midday = "pm" : midday = "am";
+                (hours > 11) ? midday = "am" : midday = "pm";
                 (hours === 0) ? hours = 12 : hours;
                 
                 var minutes = longDate.getMinutes();
                 var seconds = longDate.getSeconds();
                 
-                return hours + ":" + pad(minutes) + ":" + pad(seconds) + " " + midday;
+                return hours + ":" + pad(minutes) + " " + midday;
             }
             
             function toDateString(longDate) {
@@ -31,7 +31,7 @@
                 var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][longDate.getMonth()];
                 var year = longDate.getFullYear();
                 
-                return date + " " + month + " " + year;
+                return date + " " + month;
             }
             
             if (toDateString(sentAt) === toDateString(today)) {

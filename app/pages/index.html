@@ -127,20 +127,22 @@
                             </h4>
                         </div>
                     </header>
-                    <div class="col-sm-12 room chatroom-messages-container">
-                        <div class="chatroom-message" ng-repeat="message in chatroom.activeRoomMessages" ng-class="{even: $even, odd: $odd, own: message.username === chatroom.activeUsername}">
-                            <span class="message-top-line" ng-class="{own: message.username === chatroom.activeUsername}">
-                                <span class="username">{{ message.username }}</span>
-                                <span class="sent-at" ng-class="{own: message.username === chatroom.activeUsername}">{{ message.sentAt | SentAt }}</span>
-                            </span>
-                            <span class="message-content" ng-class="{own: message.username === chatroom.activeUsername}">{{ message.content }}</span>
+                    <section class="col-sm-12 room">
+                        <div class="room-item" ng-repeat="message in chatroom.activeRoomMessages" ng-class="{even: $even, odd: $odd, own: message.username === chatroom.activeUsername}">
+                            <div class="room-item-top-line">
+                                <span class="room-item-username" ng-class="{ own: message.username === chatroom.activeUsername}">{{ message.username }}</span>
+                                <span class="room-item-sent-at">{{ message.sentAt | SentAt }}</span>
+                            </div>
+                            <div class="room-item-second-line">
+                                <span class="room-item-content">{{ message.content }}</span>
+                            </div>
                         </div>
-                    </div>
+                    </section>
                     <footer class="col-xs-12" id ="footer-container">
                         <div class="form-group" id="form-container">
-                            <textarea class="form-control" id="text-input"></textarea>
+                            <textarea class="form-control" id="text-input" ng-model="chatroom.newMessageContent"></textarea>
                             <div class="btn-group-vertical" id="btn-group-footer-container">
-                                <button type="button" class="btn" id="btn-send">Send</button>
+                                <button type="button" class="btn" id="btn-send" ng-click="chatroom.addMessage(chatroom.newMessageContent)">Send</button>
                                 <button type="button" class="btn"><span class="ion-help-buoy" id="btn-help"></span></button>
                             </div>
                         </div>
