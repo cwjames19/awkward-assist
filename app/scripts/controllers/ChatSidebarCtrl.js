@@ -1,5 +1,5 @@
 (function() {
-    function ChatSidebarCtrl($rootScope, $uibModal, Room) {
+    function ChatSidebarCtrl($rootScope, $uibModal, Room, $scope) {
         
         /*
         * @desc creating an alias for the controller's this object
@@ -47,5 +47,5 @@
     
     angular
         .module('awkwardAssist')
-        .controller('ChatSidebarCtrl', ['$rootScope', '$uibModal', 'Room', ChatSidebarCtrl]);
+        .controller('ChatSidebarCtrl', ['$rootScope', '$uibModal', 'Room', '$scope', ChatSidebarCtrl]);
 })();

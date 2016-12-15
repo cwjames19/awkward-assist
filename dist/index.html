@@ -44,53 +44,54 @@
     <!-- Stylesheets for Brackets Live Preview-->
     <link type="text/css" rel="stylesheet" href="../styles/large-devices.css" />
     
-<!--
-     Scripts 
+<!--     Scripts -->
     <script src="/scripts/app.js"></script>
     <script src="/scripts/run.js"></script>
-         Controllers 
+<!--         Controllers -->
     <script src="/scripts/controllers/MainCtrl.js"></script>
     <script src="/scripts/controllers/ChatSidebarCtrl.js"></script>
     <script src="/scripts/controllers/ChatroomCtrl.js"></script>
     <script src="/scripts/controllers/NewRoomModalCtrl.js"></script>
     <script src="/scripts/controllers/SetCurrentUserModalCtrl.js"></script>
     <script src="/scripts/controllers/InsertableCtrl.js"></script>
-    <script src="scripts/services/room.js"></script>
-    <script src="scripts/services/message.js"></script>
-    <script src="scripts/services/insertable.js"></script>
+<!--         Services -->
+    <script src="/scripts/services/Room.js"></script>
+    <script src="/scripts/services/Message.js"></script>
+    <script src="/scripts/services/Insertable.js"></script>
     <script src="/scripts/services/fixtures.js"></script>
-         Filters 
+<!--         Filters -->
     <script src="/scripts/filters/sentAt.js"></script>
--->
     
-    <!-- Scripts -->
+<!--
+     Scripts 
     <script src="../scripts/app.js"></script>
     <script src="../scripts/run.js"></script>
-        <!-- Controllers -->
+         Controllers 
     <script src="../scripts/controllers/MainCtrl.js"></script>
     <script src="../scripts/controllers/ChatSidebarCtrl.js"></script>
     <script src="../scripts/controllers/ChatroomCtrl.js"></script>
     <script src="../scripts/controllers/NewRoomModalCtrl.js"></script>
     <script src="../scripts/controllers/SetCurrentUserModalCtrl.js"></script>
     <script src="../scripts/controllers/InsertableCtrl.js"></script>
-        <!-- Services -->
+         Services 
     <script src="../scripts/services/Room.js"></script>
     <script src="../scripts/services/Message.js"></script>
     <script src="../scripts/services/Insertable.js"></script>
     <script src="../scripts/services/fixtures.js"></script>
-        <!-- Filters -->
+         Filters 
     <script src="../scripts/filters/sentAt.js"></script>
+-->
+    
+<!--     Templates -->
+    <script src="/templates/setCurrentUserModal.html"></script>
     
 <!--
      Templates 
-    <script src="/templates/setCurrentUserModal.html"></script>
--->
-    
-    <!-- Templates -->
     <script src="../templates/setCurrentUserModal.html"></script>
+-->
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" ng-controller="ChatroomCtrl as chatroom">
         <div class="row">
             <div class="col-12 visible-xs-block mobile-top-row">
                 <a class="mobile-burger">
@@ -99,34 +100,48 @@
                     </div>
                 </a>
                 <div class="mobile-header">
-                    <p>Chatroom Name</p>
+                    <h4 ng-show="chatroom.activeRoom">{{ chatroom.activeRoom.name }}</h4>
                 </div>
             </div>
-            <div class="col-sm-3 hidden-xs aside">
-                <p>Awkward Assist</p>
-                <p>Awkward Assist</p>
-                <p>Awkward Assist</p>
-            </div>
-            <div class="col-xs-12 col-sm-9">
+            <aside class="col-sm-3 hidden-xs large-aside" ng-controller="ChatSidebarCtrl as chatSidebar">
+                <h1 class="large-aside-header">Awkward Assist</h1>
+                <div class="large-aside-second-row">
+                    <h4>Start a new room!</h4>
+                    <button class="btn btn-default" ng-click="chatSidebar.openNewRoomModal()">Create</button>
+                </div>
+                <ul class="large-aside-rooms">
+                    <li class="large-aside-rooms-item" ng-repeat="room in chatSidebar.rooms" ng-click="chatSidebar.selectActiveRoom(room)">{{ room.name }}</li>
+                </ul>
+            </aside>
+            <div class="col-xs-12 col-sm-9 main">
                 <div class="row">
-                    <div class="col-sm-12 hidden-xs main-header">
-                        
+                    <header class="col-sm-12 hidden-xs large-header">
+                        <div class="large-header-room">
+                            <h2 ng-show="chatroom.activeRoom">{{ chatroom.activeRoom.name }}</h2>
+                        </div>
+                        <div class="large-header-username">
+                            <h4>
+                                Username:<br />
+                                <p>{{ username }}</p>
+                                <a ng-click="chatroom.openSetCurrentUserModal()">Change </a>
+                            </h4>
+                        </div>
+                    </header>
+                    <div class="col-sm-12 room chatroom-messages-container">
+                        <div class="chatroom-message" ng-repeat="message in chatroom.activeRoomMessages" ng-class="{even: $even, odd: $odd, own: message.username === chatroom.activeUsername}">
+                            <span class="message-top-line" ng-class="{own: message.username === chatroom.activeUsername}">
+                                <span class="username">{{ message.username }}</span>
+                                <span class="sent-at" ng-class="{own: message.username === chatroom.activeUsername}">{{ message.sentAt | SentAt }}</span>
+                            </span>
+                            <span class="message-content" ng-class="{own: message.username === chatroom.activeUsername}">{{ message.content }}</span>
+                        </div>
                     </div>
-                    <div class="col-sm-12 room">
-                    
-                    </div>
-                    <footer class="col-xs-12">
-                        <div class="row">
-                            <div class="col-xs-10 col-sm-11 message-input">
-                                
-                            </div>
-                            <div class="col-xs-2 col-sm-1 footer-btn-container no-padding">
-                                <a><div class="footer-btn-submit no-padding">
-                                    Enter
-                                </div></a>
-                                <a><div class="footer-btn-insertable no-padding">
-
-                                </div></a>
+                    <footer class="col-xs-12" id ="footer-container">
+                        <div class="form-group" id="form-container">
+                            <textarea class="form-control" id="text-input"></textarea>
+                            <div class="btn-group-vertical" id="btn-group-footer-container">
+                                <button type="button" class="btn" id="btn-send">Send</button>
+                                <button type="button" class="btn"><span class="ion-help-buoy" id="btn-help"></span></button>
                             </div>
                         </div>
                     </footer>
