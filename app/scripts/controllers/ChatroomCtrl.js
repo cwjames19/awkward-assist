@@ -52,11 +52,12 @@
         ctrl.activeUsername = $rootScope.username;
         
         ctrl.transitionState = function(newState) {
+            const xsScreenBreakpoint = 768;
             $state.go(newState, {});
             
             $( window ).off('resize', "**");
             $( window ).on('resize', function(event) {
-                if(event.target.innerWidth >= 768 && !$state.is('root')) {
+                if(event.target.innerWidth >= xsScreenBreakpoint && !$state.is('root')) {
                     $state.go('root', {});
                 }
             });
@@ -111,6 +112,17 @@
             }, 20);
             ctrl.newMessageContent = "";
         }
+        
+        ctrl.handleEnterPress = function(event) {
+            const carriageReturnCharCode = 13;
+            if (event.charCode == carriageReturnCharCode) {
+                if(event.shiftKey) {
+                    ctrl.newMessageContent.concat(String.fromCharCode(carriageReturnCharCode));
+                } else {
+                    ctrl.addMessage(ctrl.newMessageContent);
+                }
+            }
+        };
         
         /*
         * listen for a change in chatroom selection
