@@ -18,8 +18,15 @@
             templateUrl: '/templates/mobile-rooms.html'
         };
         
+        var mobileInsertableState = {
+            name: 'mobile-insertable',
+            url: '/mobile-insertable',
+            templateUrl: '/templates/mobile-insertable.html'
+        };
+        
         $stateProvider.state(rootState);
         $stateProvider.state(mobileRoomsState);
+        $stateProvider.state(mobileInsertableState);
 
     }
     

@@ -1,0 +1,22 @@
+<footer class="col-xs-12" id="footer-container">
+    <textarea id="text-input" ng-model="chatroom.newMessageContent"></textarea>
+    <div id="btn-container">
+        <button type="button" class="btn" id="btn-send" ng-click="chatroom.addMessage(chatroom.newMessageContent)">Send</button>
+
+        <div id="btn-help-container" ng-controller="InsertableCtrl as insertable" ng-click="insertable.transitionState('mobile-insertable')">
+            <button type="button" class="btn" id="btn-help">
+                <span class="ion-help-buoy"></span>
+            </button>
+            <menu class="hidden-xs" id="insertable-container">
+                <h2 style="margin:0.2em auto -.3em;font-size:2.3em;margin-bottom:-.2em">What do you want to do?</h2>
+                <button class="btn menu-option" ng-click="insertable.getInsertable('smackTalk')"><span class="ion-nuclear"></span> Talk some smack</button>
+                <button class="btn menu-option" ng-click="insertable.getInsertable('breakup')"><span class="ion-heart-broken"></span> Break up</button>
+                <button class="btn menu-option" ng-click="insertable.getInsertable('compliment')"><span class="ion-thumbsup"></span> Give a compliment</button>
+                <button class="btn menu-option" ng-click="insertable.getInsertable('excuseToLeave')"><span class="ion-log-out"></span> Leave conversation</button>
+                <button class="btn menu-option" ng-click="insertable.getInsertable('joke')"><span class="ion-happy-outline"></span> Tell a joke</button>
+                <button class="btn menu-option" ng-click="insertable.getInsertable('subjectChange')" ng-click="insertable.activeState()"><span class="ion-refresh"></span> Change the subject...</button>
+            </menu>
+            <script src="/scripts/magic/insertableMenu.js"></script>
+        </div>
+    </div>
+</footer>
