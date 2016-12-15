@@ -1,5 +1,5 @@
 <footer class="col-xs-12" id="footer-container">
-    <textarea id="text-input" ng-model="chatroom.newMessageContent"></textarea>
+    <textarea id="text-input" ng-model="chatroom.newMessageContent" ng-keypress="chatroom.handleEnterPress($event)"></textarea>
     <div id="btn-container">
         <button type="button" class="btn" id="btn-send" ng-click="chatroom.addMessage(chatroom.newMessageContent)">Send</button>
 

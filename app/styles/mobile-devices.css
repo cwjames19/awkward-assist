@@ -34,12 +34,14 @@
 }
 
 .mobile-header {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: center;
     height: 100%;
     width: calc(100% - 60px);
     float: right;
+    border-bottom: 1px double lightgrey;
 }
 
 .mobile-header-room {

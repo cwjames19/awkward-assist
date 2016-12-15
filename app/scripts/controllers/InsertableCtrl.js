@@ -23,6 +23,10 @@
             }
             
         };
+        
+        ctrl.transitionState = function(newState) {
+            $scope.$parent.chatroom.transitionState(newState);
+        }
     }
     
     angular

@@ -1,10 +1,11 @@
 var btn = $("#btn-help");
 var container = $("#insertable-container");
 var btnAndContainer = $("#btn-help-container");
+const xsScreenBreakpoint = 768;
 
 console.log("about to add event listeners");
 btnAndContainer.mouseenter( function(event) {
-    if($( window )[0].innerWidth >= 768) {
+    if($( window )[0].innerWidth >= xsScreenBreakpoint) {
         btn.css({
             "background-color": "white",
             "color": "#00ADAD"
@@ -25,7 +26,7 @@ btnAndContainer.mouseenter( function(event) {
 
 
 btnAndContainer.mouseleave( function(event) {
-    if($( window )[0].innerWidth >= 768) {
+    if($( window )[0].innerWidth >= xsScreenBreakpoint) {
         container.children().hide();
         container.animate({
             height: "0em",
