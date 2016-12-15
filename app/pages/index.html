@@ -44,6 +44,9 @@
     
     <!-- Stylesheets for Brackets Live Preview-->
     <link type="text/css" rel="stylesheet" href="../styles/large-devices.css" />
+    <link type="text/css" rel="stylesheet" href="../styles/mobile-devices.css" />
+    <link type="text/css" rel="stylesheet" href="../styles/modals.css" />
+    <link type="text/css" rel="stylesheet" href="../styles/mobile-rooms.css" />
     
 <!--     Scripts -->
     <script src="/scripts/app.js"></script>
@@ -95,76 +98,27 @@
     <div class="container-fluid" ng-controller="ChatroomCtrl as chatroom">
         <div class="row">
             <div class="col-12 visible-xs-block mobile-top-row">
-                <a class="mobile-burger">
-                    <div class="text-center">
-                        <span class="glyphicon glyphicon-menu-hamburger mobile-burger"></span>
-                    </div>
-                </a>
+                <div class="btn-group" uib-dropdown is-open="status.isopen">
+                    <a id="mobile-menu-button" uib-dropdown-toggle ng-disabled="disabled" class="mobile-burger">
+                        <div class="text-center">
+                            <span class="glyphicon glyphicon-menu-hamburger mobile-burger"></span>
+                        </div>
+                    </a>
+                    <ul class="mobile-menu" uib-dropdown-menu role="menu" aria-labelledby="mobile-menu-button">
+                        <li role="menuitem"><a ng-click="chatroom.transitionToMobileRooms()">Enter a Room</a></li>
+                        <li role="menuitem"><a ng-click="chatroom.openSetCurrentUserModal()">Change Username</a></li>
+                    </ul>
+                </div>
                 <div class="mobile-header">
-                    <h4 ng-show="chatroom.activeRoom">{{ chatroom.activeRoom.name }}</h4>
+                    <h4 ng-show="chatroom.activeRoom" class="mobile-header-room">{{ chatroom.activeRoom.name }} </h4>
+                    <h4 ng-hide="chatroom.activeRoom" class="mobile-header-room">Use the menu to choose a chatroom!</h4>
+                    <div id="mobile-header-username">
+                        <p>Username: </p>
+                        <p>{{ username }}</p>
+                    </div>
                 </div>
             </div>
-            <aside class="col-sm-3 hidden-xs large-aside" ng-controller="ChatSidebarCtrl as chatSidebar">
-                <h1 class="large-aside-header">Awkward Assist</h1>
-                <div class="large-aside-second-row">
-                    <h4>Start a new room!</h4>
-                    <button class="btn btn-default" ng-click="chatSidebar.openNewRoomModal()">Create</button>
-                </div>
-                <ul class="large-aside-rooms">
-                    <li class="large-aside-rooms-item" ng-repeat="room in chatSidebar.rooms" ng-click="chatSidebar.selectActiveRoom(room)">{{ room.name }}</li>
-                </ul>
-            </aside>
-            <div class="col-xs-12 col-sm-9" id="main">
-                <div class="row">
-                    <header class="col-sm-12 hidden-xs large-header">
-                        <div class="large-header-room">
-                            <h2 ng-show="chatroom.activeRoom">{{ chatroom.activeRoom.name }}</h2>
-                        </div>
-                        <div class="large-header-username">
-                            <h4>
-                                Username:<br />
-                                <p>{{ username }}</p>
-                                <a ng-click="chatroom.openSetCurrentUserModal()">Change </a>
-                            </h4>
-                        </div>
-                    </header>
-                    <section class="col-sm-12 room">
-                        <div class="room-item" ng-repeat="message in chatroom.activeRoomMessages" ng-class="{even: $even, odd: $odd, own: message.username === chatroom.activeUsername}">
-                            <div class="room-item-top-line">
-                                <span class="room-item-username" ng-class="{ own: message.username === chatroom.activeUsername}">{{ message.username }}</span>
-                                <span class="room-item-sent-at">{{ message.sentAt | SentAt }}</span>
-                            </div>
-                            <div class="room-item-second-line">
-                                <span class="room-item-content">{{ message.content }}</span>
-                            </div>
-                        </div>
-                    </section>
-                    <footer class="col-xs-12" id="footer-container">
-                        <textarea id="text-input" ng-model="chatroom.newMessageContent"></textarea>
-                        <div id="btn-container">
-                            <button type="button" class="btn" id="btn-send" ng-click="chatroom.addMessage(chatroom.newMessageContent)">Send</button>
-                            
-                            <div id="btn-help-container">
-                                <button type="button" class="btn" id="btn-help">
-                                    <span class="ion-help-buoy"></span>
-                                </button>
-                                <menu class="hidden-xs" id="insertable-container">
-                                    <h2 style="margin:0.2em auto -.3em;font-size:2.3em;margin-bottom:-.2em">What do you want to do?</h2>
-                                    <button class="btn menu-option" ng-click="insertable.getInsertable('smackTalk')"><span class="ion-nuclear"></span> Talk some smack</button>
-                                    <button class="btn menu-option" ng-click="insertable.getInsertable('breakup')"><span class="ion-heart-broken"></span> Break up</button>
-                                    <button class="btn menu-option" ng-click="insertable.getInsertable('compliment')"><span class="ion-thumbsup"></span> Give a compliment</button>
-                                    <button class="btn menu-option" ng-click="insertable.getInsertable('excuseToLeave')"><span class="ion-log-out"></span> Leave conversation</button>
-                                    <button class="btn menu-option" ng-click="insertable.getInsertable('joke')"><span class="ion-happy-outline"></span> Tell a joke</button>
-                                    <button class="btn menu-option" ng-click="insertable.getInsertable('subjectChange')"><span class="ion-refresh"></span> Change the subject...</button>
-                                </menu>
-                            </div>
-                        </div>
-                    </footer>
-                    
-                </div>
-            </div>
-            
-    <script src="/scripts/magic/insertableMenu.js"></script>
+            <ui-view></ui-view>
         </div>
     </div>
 </body>

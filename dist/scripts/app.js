@@ -6,7 +6,20 @@
                 requireBase: false
             });
         
-        $stateProvider
+        var rootState = {
+            name: 'root',
+            url: '/',
+            templateUrl: '/templates/root.html'
+        };
+        
+        var mobileRoomsState = {
+            name: 'mobile-rooms',
+            url: '/mobile-rooms',
+            templateUrl: '/templates/mobile-rooms.html'
+        };
+        
+        $stateProvider.state(rootState);
+        $stateProvider.state(mobileRoomsState);
 
     }
     
