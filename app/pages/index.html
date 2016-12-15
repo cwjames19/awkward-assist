@@ -2,6 +2,7 @@
 <html ng-app="awkwardAssist" ng-controller="MainCtrl as main">
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Awkward Assist</title>
     
     <!-- Ionicons -->
@@ -113,7 +114,7 @@
                     <li class="large-aside-rooms-item" ng-repeat="room in chatSidebar.rooms" ng-click="chatSidebar.selectActiveRoom(room)">{{ room.name }}</li>
                 </ul>
             </aside>
-            <div class="col-xs-12 col-sm-9 main">
+            <div class="col-xs-12 col-sm-9" id="main">
                 <div class="row">
                     <header class="col-sm-12 hidden-xs large-header">
                         <div class="large-header-room">
@@ -138,17 +139,32 @@
                             </div>
                         </div>
                     </section>
-                    <footer class="col-xs-12" id ="footer-container">
-                        <div class="form-group" id="form-container">
-                            <textarea class="form-control" id="text-input" ng-model="chatroom.newMessageContent"></textarea>
-                            <div class="btn-group-vertical" id="btn-group-footer-container">
-                                <button type="button" class="btn" id="btn-send" ng-click="chatroom.addMessage(chatroom.newMessageContent)">Send</button>
-                                <button type="button" class="btn"><span class="ion-help-buoy" id="btn-help"></span></button>
+                    <footer class="col-xs-12" id="footer-container">
+                        <textarea id="text-input" ng-model="chatroom.newMessageContent"></textarea>
+                        <div id="btn-container">
+                            <button type="button" class="btn" id="btn-send" ng-click="chatroom.addMessage(chatroom.newMessageContent)">Send</button>
+                            
+                            <div id="btn-help-container">
+                                <button type="button" class="btn" id="btn-help">
+                                    <span class="ion-help-buoy"></span>
+                                </button>
+                                <menu class="hidden-xs" id="insertable-container">
+                                    <h2 style="margin:0.2em auto -.3em;font-size:2.3em;margin-bottom:-.2em">What do you want to do?</h2>
+                                    <button class="btn menu-option" ng-click="insertable.getInsertable('smackTalk')"><span class="ion-nuclear"></span> Talk some smack</button>
+                                    <button class="btn menu-option" ng-click="insertable.getInsertable('breakup')"><span class="ion-heart-broken"></span> Break up</button>
+                                    <button class="btn menu-option" ng-click="insertable.getInsertable('compliment')"><span class="ion-thumbsup"></span> Give a compliment</button>
+                                    <button class="btn menu-option" ng-click="insertable.getInsertable('excuseToLeave')"><span class="ion-log-out"></span> Leave conversation</button>
+                                    <button class="btn menu-option" ng-click="insertable.getInsertable('joke')"><span class="ion-happy-outline"></span> Tell a joke</button>
+                                    <button class="btn menu-option" ng-click="insertable.getInsertable('subjectChange')"><span class="ion-refresh"></span> Change the subject...</button>
+                                </menu>
                             </div>
                         </div>
                     </footer>
+                    
                 </div>
             </div>
+            
+    <script src="/scripts/magic/insertableMenu.js"></script>
         </div>
     </div>
 </body>
